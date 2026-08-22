@@ -6,11 +6,13 @@ import "./styles.css";
 const rootElement = document.getElementById("root");
 
 
-if (!rootElement) {
-throw new Error("MOLIDO: root element not found");
+if (rootElement === null) {
+throw new Error("MOLIDO root element not found");
 }
 
 
-ReactDOM.createRoot(rootElement).render();
+const root = ReactDOM.createRoot(rootElement);
 
+
+root.render(App());
 
