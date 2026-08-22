@@ -1,47 +1,52 @@
 name: MOLIDO Website Build
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - "website/**"
-      - ".github/workflows/website-build.yml"
 
-  pull_request:
-    branches:
-      - main
-    paths:
-      - "website/**"
-      - ".github/workflows/website-build.yml"
+on:
+push:
+branches:
+- main
+paths:
+- "website/**"
+- ".github/workflows/website-build.yml"
+
+
+pull_request:
+branches:
+- main
+paths:
+- "website/**"
+- ".github/workflows/website-build.yml"
+
 
 permissions:
-  contents: read
+contents: read
+
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+build:
+runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: website
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+defaults:
+  run:
+    working-directory: website
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
+steps:
+  - name: Checkout
+    uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm install
+  - name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: 22
 
-      - name: Type check
-        run: npm run typecheck
+  - name: Install dependencies
+    run: npm install
 
-      - name: Build website
-        run: npm run build
+  - name: Type check
+    run: npm run typecheck
+
+  - name: Build website
+    run: npm run build
 
 
