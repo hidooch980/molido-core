@@ -37,8 +37,23 @@ jobs:
         working-directory: website
         run: npm run typecheck
 
+      # A CNAME file means a custom domain, which serves from the root
+      # rather than the /molido-core/ project sub-path.
+      - name: Resolve base path
+        id: base
+        run: |
+          if [ -f website/public/CNAME ]; then
+            echo "Custom domain: $(cat website/public/CNAME)"
+            echo "value=/" >> "$GITHUB_OUTPUT"
+          else
+            echo "No CNAME; using the project sub-path"
+            echo "value=/molido-core/" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Build
         working-directory: website
+        env:
+          VITE_BASE: ${{ steps.base.outputs.value }}
         run: npm run build
 
       - name: Configure Pages
