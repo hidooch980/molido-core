@@ -144,13 +144,19 @@ Discovery + Connection + Unknown + Future
 
 The symbol should be original and not imitate existing brands.
 
-```text
-CONTENT STYLE
+### CONTENT STYLE
+
 MOLIDO content should generally use:
-Opening
+
+### Opening
+
 A strong visual or narrative hook.
-Middle
+
+### Middle
+
 Mystery, discovery, information, or challenge.
+
+```text
 Ending
 A reveal, question, clue, or invitation.
 Example:
@@ -166,6 +172,8 @@ QUESTION
  ↓
 CTA
 ```
+
+
 
 ### VIDEO STYLE
 
@@ -244,10 +252,13 @@ Country selection may influence:
 
 Country localization must not create discriminatory access to basic safety or privacy rights.
 
-```text
-AI BRAND CONTROL
+### AI BRAND CONTROL
+
 AI-generated content must follow this brand identity.
+
 Before publication, content should pass:
+
+```text
 Brand Check
  ↓
 Quality Check
@@ -256,6 +267,8 @@ Safety Check
  ↓
 Human Approval
 ```
+
+
 
 ### COPYRIGHT
 

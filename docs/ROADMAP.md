@@ -27,6 +27,8 @@ Scale
 Future Decentralization
 ```
 
+
+
 Each phase must provide a stable foundation for the next phase.
 
 ### PHASE 0 — ZERO BUDGET FOUNDATION
@@ -165,6 +167,8 @@ Controlled Automation
 Advanced Automation
 ```
 
+
+
 Sensitive operations require human governance.
 
 - PHASE 6 — SCALE
@@ -248,9 +252,11 @@ Possible components:
 
 This phase is not currently active.
 
-```text
-CONTENT ROADMAP
+### CONTENT ROADMAP
+
 The content ecosystem evolves continuously.
+
+```text
 Daily Content
  ↓
 Story Episodes
@@ -263,6 +269,8 @@ Game Content
  ↓
 AI-Powered Personalization
 ```
+
+
 
 ### GLOBAL EXPANSION
 
@@ -315,9 +323,13 @@ Advanced Infrastructure Security
 Future Decentralized Security
 ```
 
-```text
-DATA ROADMAP
+
+
+### DATA ROADMAP
+
 Future data architecture may evolve through:
+
+```text
 Basic Content Data
  ↓
 User Profiles
@@ -333,12 +345,17 @@ Personalization
 Distributed Verification
 ```
 
+
+
 Privacy must remain a core requirement throughout all phases.
 
-```text
-QUALITY GATES
+### QUALITY GATES
+
 No phase should automatically begin simply because the previous phase exists.
+
 Each phase must pass a quality gate.
+
+```text
 Example:
 Development
  ↓
@@ -354,6 +371,8 @@ Human Approval
  ↓
 Next Phase
 ```
+
+
 
 ### CURRENT PRIORITY
 
@@ -410,6 +429,8 @@ An AI Ecosystem
  ↓
 A Global Digital Universe
 ```
+
+
 
 - Build carefully.
 - Grow honestly.

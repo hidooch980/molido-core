@@ -82,14 +82,21 @@ Until the project generates real revenue:
 
 MOLIDO grows through real users, real content, real engagement, and real value.
 
-```text
-🌌 THE LAST SIGNAL
+## 🌌 THE LAST SIGNAL
+
 THE LAST SIGNAL is the central story universe of MOLIDO.
+
 A mysterious signal has reached Earth.
+
 Its origin is unknown.
+
 Its purpose is unknown.
+
 The signal has been divided into fragments.
+
 Players around the world must discover the fragments, solve mysteries, complete missions, and gradually uncover the larger story.
+
+```text
 Story Structure
 Unknown Signal
        ↓
@@ -103,6 +110,8 @@ MOLIDO Awakening
        ↓
 The Unknown
 ```
+
+
 
 ### Daily Story
 
@@ -174,6 +183,8 @@ Analytics
 AI Learning
 ```
 
+
+
 AI may automate production tasks, but public publishing and sensitive actions remain subject to appropriate human controls.
 
 ## 🌐 3D WEBSITE
@@ -188,9 +199,11 @@ The future MOLIDO website will be:
 - interactive
 - continuously evolving
 
-```text
 The website should not feel like a static corporate page.
+
 It should feel like a living part of the MOLIDO universe.
+
+```text
 Daily Website Evolution
 Daily Signal
  ↓
@@ -204,6 +217,8 @@ New Featured Content
  ↓
 Website Update
 ```
+
+
 
 The initial website will prioritize lightweight technologies and free hosting where possible.
 
@@ -226,11 +241,15 @@ Important
 
 XP, points, collectibles, and game rewards do not automatically represent money or guaranteed financial value.
 
-```text
-🌍 GLOBAL COMMUNITIES
+## 🌍 GLOBAL COMMUNITIES
+
 MOLIDO is designed for a global audience.
+
 Users can select their country during onboarding.
+
 Country selection can determine:
+
+```text
 Country
  ↓
 Language
@@ -243,6 +262,8 @@ Official Channels
  ↓
 Regional Missions
 ```
+
+
 
 Initial localization targets may include:
 
@@ -339,10 +360,13 @@ Sensitive actions must have appropriate authorization and audit trails.
 
 No internet system can honestly guarantee that it will never be hacked. MOLIDO aims to minimize attack surface, detect threats quickly, contain incidents, and recover safely.
 
-```text
-⛓️ FUTURE BLOCKCHAIN
+## ⛓️ FUTURE BLOCKCHAIN
+
 Blockchain is a future component, not a Phase 0 requirement.
+
 The development path is:
+
+```text
 Community
  ↓
 Game
@@ -357,6 +381,8 @@ Audit
  ↓
 Mainnet
 ```
+
+
 
 No blockchain mainnet is required to launch the first version of MOLIDO.
 
@@ -514,6 +540,8 @@ Deployment
 Monitoring
 ```
 
+
+
 ```text
 Incident Response
 Security incidents must follow:
@@ -531,6 +559,8 @@ Document
  ↓
 Improve
 ```
+
+
 
 ## 📊 PHASE 0 SUCCESS CRITERIA
 

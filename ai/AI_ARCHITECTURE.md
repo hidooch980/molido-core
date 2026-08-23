@@ -42,6 +42,7 @@ MOLIDO AI CORE
 └── Second Brain
 ```
 
+
 ### 1. Project Manager AI
 
 Responsibilities:
@@ -126,6 +127,7 @@ Publication
  ↓
 Analytics
 ```
+
 
 ### 5. Community AI
 

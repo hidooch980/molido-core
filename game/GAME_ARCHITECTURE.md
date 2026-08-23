@@ -49,6 +49,8 @@ Community Challenge
 New Signal
 ```
 
+
+
 The loop is designed to encourage meaningful participation rather than artificial engagement.
 
 ### PLAYER PROFILE
@@ -99,6 +101,8 @@ Level 3
 Advanced Explorer
 ```
 
+
+
 Level thresholds should be configurable.
 
 The system must prevent artificial XP inflation.
@@ -140,9 +144,11 @@ Rarity must have clearly defined rules.
 
 Rarity should not be presented as guaranteed monetary value.
 
-```text
-STORY UNLOCK SYSTEM
+### STORY UNLOCK SYSTEM
+
 Some story elements may unlock after completing specific missions.
+
+```text
 Example:
 Fragment A
    +
@@ -152,6 +158,8 @@ Mission 04
    ↓
 Hidden Episode
 ```
+
+
 
 The system must maintain story continuity.
 
@@ -353,10 +361,13 @@ Features may include:
 - Parental controls where required
 - Restricted communication features
 
-```text
-GAME ECONOMY
+### GAME ECONOMY
+
 The initial game economy is non-financial.
+
 Potential future systems:
+
+```text
 XP
  ↓
 Levels
@@ -367,6 +378,8 @@ Cosmetics
  ↓
 Future Utility
 ```
+
+
 
 Any financial or blockchain economy requires separate design and security review.
 

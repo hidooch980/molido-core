@@ -20,9 +20,11 @@ AI can prepare content automatically.
 
 Public publishing remains controlled by the authorized human operator until secure publishing automation is explicitly enabled.
 
-```text
-DAILY CONTENT ENGINE
+### DAILY CONTENT ENGINE
+
 Every day the factory should generate a complete content package.
+
+```text
 Daily Package
 Daily Signal
     ↓
@@ -54,6 +56,8 @@ Publish
     ↓
 Analytics
 ```
+
+
 
 ### DAILY OUTPUT
 
@@ -319,6 +323,8 @@ PUBLISH
 MEASURE
 ```
 
+
+
 - DAILY ANALYTICS
 - After publication, collect approved metrics.
 - YouTube
@@ -352,6 +358,8 @@ Improve
 Next Content
 ```
 
+
+
 The system should optimize for meaningful audience value, not vanity metrics alone.
 
 ```text
@@ -367,6 +375,7 @@ content/
 ├── thumbnails/
 └── localization/
 ```
+
 
 ### HUMAN CONTROL
 

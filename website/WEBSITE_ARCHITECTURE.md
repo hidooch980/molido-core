@@ -40,6 +40,7 @@ YouTube
 Telegram
 ```
 
+
 No expensive backend is required for the first version.
 
 ```text
@@ -61,6 +62,7 @@ MOLIDO WEBSITE
 ├── Profile
 └── Security
 ```
+
 
 ### 3D EXPERIENCE
 
@@ -275,6 +277,7 @@ Database
 Storage
 ```
 
+
 AI services should connect through controlled APIs.
 
 ### INITIAL ZERO-COST DEPLOYMENT
@@ -363,6 +366,7 @@ Production
 Monitoring
 ```
 
+
 ### DISASTER RECOVERY
 
 The website must eventually have:
@@ -410,5 +414,6 @@ EXPLORE
  ↓
 RETURN
 ```
+
 
 The website is the front door of MOLIDO.
