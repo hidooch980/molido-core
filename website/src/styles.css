@@ -710,3 +710,21 @@ body::after {
   color: #facc15;
   border-color: rgba(250, 204, 21, 0.35);
 }
+
+/* --- Solved state --- */
+
+.frag-done {
+  margin: 0 0 1rem;
+}
+
+.frag-done .btn {
+  cursor: pointer;
+  margin-top: 0.3rem;
+}
+
+.frag-attempts {
+  margin: 0 0 0.7rem;
+  font-size: 0.85rem;
+  color: #97a3c2;
+  font-variant-numeric: tabular-nums;
+}

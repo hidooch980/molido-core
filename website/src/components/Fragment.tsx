@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   puzzleFor,
   isCorrect,
@@ -9,6 +9,7 @@ import {
   type Puzzle,
 } from "../content/puzzles";
 import { todayISO } from "../content/signals";
+import { loadAttempt, saveAttempt, share, shareText } from "../content/share";
 import { useStrings } from "../i18n/context";
 import type { Strings } from "../i18n/strings";
 
@@ -143,15 +144,48 @@ function Fragment() {
 
   const [guess, setGuess] = useState("");
   const [result, setResult] = useState<Result>("unanswered");
+  const [attempts, setAttempts] = useState(0);
+  const [solved, setSolved] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  // Restore today's result so a reload does not reset the count or hide the
+  // share button from someone who already solved it.
+  useEffect(() => {
+    const stored = loadAttempt(today);
+    if (stored) {
+      setAttempts(stored.attempts);
+      setSolved(stored.solved);
+      if (stored.solved) setResult("correct");
+    }
+  }, [today]);
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
+    if (solved) return;
+
     const n = Number(guess);
-    if (!Number.isInteger(n) || n < range.min || n > range.max) {
-      setResult("wrong");
-      return;
+    const inRange = Number.isInteger(n) && n >= range.min && n <= range.max;
+    const won = inRange && isCorrect(puzzle, n);
+    const count = attempts + 1;
+
+    setAttempts(count);
+    setResult(won ? "correct" : "wrong");
+    if (won) setSolved(true);
+    saveAttempt({ date: today, kind: puzzle.kind, attempts: count, solved: won });
+  }
+
+  async function onShare() {
+    const url = `${window.location.origin}${window.location.pathname}`;
+    const text = shareText(
+      { date: today, kind: puzzle.kind, attempts, solved: true },
+      { title: `${t.brand} — ${t.heroTitle}`, attempts: t.attemptsLabel },
+      url,
+    );
+    const outcome = await share(text);
+    if (outcome !== "failed") {
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
     }
-    setResult(isCorrect(puzzle, n) ? "correct" : "wrong");
   }
 
   return (
@@ -167,6 +201,7 @@ function Fragment() {
         <PeriodView puzzle={puzzle} />
       )}
 
+      {!solved ? (
       <form className="frag-form" onSubmit={submit}>
         <label className="frag-label" htmlFor="frag-guess">
           {prompt(puzzle, t)}
@@ -190,8 +225,21 @@ function Fragment() {
           </button>
         </div>
       </form>
+      ) : null}
 
-      {result !== "unanswered" ? (
+      {solved ? (
+        <div className="frag-done">
+          <p className="frag-correct">{t.alreadySolved}</p>
+          <p className="frag-attempts">
+            {t.attemptsLabel}: {attempts}
+          </p>
+          <button className="btn" type="button" onClick={onShare}>
+            {copied ? t.shareCopied : t.shareResult}
+          </button>
+        </div>
+      ) : null}
+
+      {!solved && result !== "unanswered" ? (
         <p
           className={result === "correct" ? "frag-correct" : "frag-wrong"}
           role="status"

@@ -5,6 +5,7 @@
  * and one with none is unsolvable. Both are worse than shipping no puzzle,
  * so this runs in CI.
  */
+import { shareText } from "../src/content/share";
 import {
   puzzleFor,
   isCorrect,
@@ -98,6 +99,30 @@ for (const day of days) {
     check(
       puzzle.values.length % puzzle.answer === 0,
       `${day}: sequence stops mid-cycle, which hints at a longer period`,
+    );
+  }
+}
+
+// The shared result must never carry the answer. The date and the attempt
+// count are public, so the real invariant is stricter and simpler: the text
+// contains no number beyond those two.
+for (const day of days) {
+  const puzzle = puzzleFor(day);
+  const allowed = new Set(day.split("-").map(Number));
+
+  for (let attempts = 1; attempts <= 12; attempts++) {
+    const text = shareText(
+      { date: day, kind: puzzle.kind, attempts, solved: true },
+      { title: "MOLIDO", attempts: "Attempts" },
+      "https://example.test/",
+    );
+    const extra = (text.match(/\d+/g) ?? [])
+      .map(Number)
+      .filter((n) => !allowed.has(n) && n !== attempts);
+
+    check(
+      extra.length === 0,
+      `${day}: share text carries unexpected numbers [${extra}] - "${text.replace(/\n/g, " | ")}"`,
     );
   }
 }

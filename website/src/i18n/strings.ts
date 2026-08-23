@@ -40,6 +40,10 @@ export interface Strings {
   parityColumn: string;
   periodIntro: string;
   periodPrompt: string;
+  shareResult: string;
+  shareCopied: string;
+  attemptsLabel: string;
+  alreadySolved: string;
 }
 
 export const strings: Localized<Strings> = {
@@ -86,6 +90,10 @@ export const strings: Localized<Strings> = {
     parityColumn: "column",
     periodIntro: "The carrier repeats. A fixed run of values is transmitted over and over with nothing between the repeats. Work out how long that run is.",
     periodPrompt: "Repeat length",
+    shareResult: "Share result",
+    shareCopied: "Copied",
+    attemptsLabel: "Attempts",
+    alreadySolved: "You solved today’s fragment. The next one arrives tomorrow.",
   },
   fa: {
     brand: "مولیدو",
@@ -130,6 +138,10 @@ export const strings: Localized<Strings> = {
     parityColumn: "ستون",
     periodIntro: "حامل تکرار می‌شود. یک رشته‌ی ثابت از مقادیر بارها و بارها فرستاده می‌شود، بدون هیچ چیزی میان تکرارها. طول آن رشته را به دست بیاور.",
     periodPrompt: "طول تکرار",
+    shareResult: "اشتراک نتیجه",
+    shareCopied: "کپی شد",
+    attemptsLabel: "تلاش",
+    alreadySolved: "قطعه‌ی امروز را حل کردی. بعدی فردا می‌رسد.",
   },
   ar: {
     brand: "موليدو",
@@ -174,6 +186,10 @@ export const strings: Localized<Strings> = {
     parityColumn: "عمود",
     periodIntro: "الحامل يتكرر. تُرسل سلسلة ثابتة من القيم مرارًا وتكرارًا بلا شيء بين التكرارات. استنتج طول تلك السلسلة.",
     periodPrompt: "طول التكرار",
+    shareResult: "شارك النتيجة",
+    shareCopied: "تم النسخ",
+    attemptsLabel: "المحاولات",
+    alreadySolved: "حللت شظية اليوم. التالية تصل غدًا.",
   },
   ur: {
     brand: "مولیڈو",
@@ -218,6 +234,10 @@ export const strings: Localized<Strings> = {
     parityColumn: "کالم",
     periodIntro: "کیریئر دہراتا ہے۔ اقدار کی ایک مقررہ لڑی بار بار بھیجی جاتی ہے، دہرائیوں کے درمیان کچھ نہیں۔ اس لڑی کی لمبائی معلوم کریں۔",
     periodPrompt: "دہرائی کی لمبائی",
+    shareResult: "نتیجہ شیئر کریں",
+    shareCopied: "کاپی ہو گیا",
+    attemptsLabel: "کوششیں",
+    alreadySolved: "آپ نے آج کا ٹکڑا حل کر لیا۔ اگلا کل آئے گا۔",
   },
   hi: {
     brand: "मोलिडो",
@@ -262,6 +282,10 @@ export const strings: Localized<Strings> = {
     parityColumn: "स्तंभ",
     periodIntro: "वाहक दोहराता है। मानों की एक निश्चित लड़ी बार-बार भेजी जाती है, दोहरावों के बीच कुछ नहीं। उस लड़ी की लंबाई निकालें।",
     periodPrompt: "दोहराव की लंबाई",
+    shareResult: "परिणाम साझा करें",
+    shareCopied: "कॉपी हो गया",
+    attemptsLabel: "प्रयास",
+    alreadySolved: "आपने आज का टुकड़ा हल कर लिया। अगला कल आएगा।",
   },
   tr: {
     brand: "MOLIDO",
@@ -306,6 +330,10 @@ export const strings: Localized<Strings> = {
     parityColumn: "sütun",
     periodIntro: "Taşıyıcı tekrar ediyor. Sabit bir değer dizisi, aralarında hiçbir şey olmadan tekrar tekrar gönderiliyor. O dizinin uzunluğunu bulun.",
     periodPrompt: "Tekrar uzunluğu",
+    shareResult: "Sonucu paylaş",
+    shareCopied: "Kopyalandı",
+    attemptsLabel: "Deneme",
+    alreadySolved: "Bugünün parçasını çözdünüz. Bir sonraki yarın geliyor.",
   },
   az: {
     brand: "MOLIDO",
@@ -350,6 +378,10 @@ export const strings: Localized<Strings> = {
     parityColumn: "sütun",
     periodIntro: "Daşıyıcı təkrarlanır. Sabit bir dəyər ardıcıllığı, təkrarlar arasında heç nə olmadan dönə-dönə göndərilir. O ardıcıllığın uzunluğunu tapın.",
     periodPrompt: "Təkrar uzunluğu",
+    shareResult: "Nəticəni paylaş",
+    shareCopied: "Kopyalandı",
+    attemptsLabel: "Cəhd",
+    alreadySolved: "Bugünkü parçanı həll etdin. Növbəti sabah gəlir.",
   },
   zh: {
     brand: "MOLIDO",
@@ -394,5 +426,9 @@ export const strings: Localized<Strings> = {
     parityColumn: "列",
     periodIntro: "载波在重复。一段固定长度的值被一遍遍发送，重复之间没有任何东西。算出这段有多长。",
     periodPrompt: "重复长度",
+    shareResult: "分享结果",
+    shareCopied: "已复制",
+    attemptsLabel: "尝试次数",
+    alreadySolved: "你解开了今天的片段。下一个明天到来。",
   },
 };
