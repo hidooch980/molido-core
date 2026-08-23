@@ -18,14 +18,26 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background: #030409;
+}
+
+/*
+ * The ground colour lives on <html>, not <body>.
+ *
+ * In a stacking context, negative z-index children paint BEFORE the
+ * backgrounds of in-flow block descendants - so an opaque background on
+ * <body> covers every z-index:-1 layer beneath it, including the canvas
+ * star field. Keeping <body> transparent lets those layers show through.
+ */
+html {
+  background-color: #030409;
+  background-image:
+    radial-gradient(circle at 50% -10%, rgba(70, 120, 255, 0.12), transparent 60%),
+    radial-gradient(circle at 10% 90%, rgba(140, 60, 255, 0.08), transparent 55%);
+  background-attachment: fixed;
 }
 
 body {
-  background-image:
-    radial-gradient(circle at 50% -10%, rgba(70, 120, 255, 0.25), transparent 60%),
-    radial-gradient(circle at 10% 90%, rgba(140, 60, 255, 0.14), transparent 55%);
-  background-attachment: fixed;
+  background: transparent;
 }
 
 a {
@@ -259,7 +271,9 @@ a {
 .lang {
   position: absolute;
   top: 1rem;
-  inset-inline-end: 0;
+  /* Absolute offsets resolve against the padding box, so this has to repeat
+     the app's gutter or the control sits flush against the screen edge. */
+  inset-inline-end: 1.25rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -424,8 +438,8 @@ body::before {
   pointer-events: none;
   z-index: -2;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(90, 130, 255, 0.3), transparent 62%),
-    radial-gradient(ellipse at 15% 30%, rgba(150, 70, 255, 0.16), transparent 58%);
+    radial-gradient(ellipse at 50% 0%, rgba(90, 130, 255, 0.1), transparent 62%),
+    radial-gradient(ellipse at 15% 30%, rgba(150, 70, 255, 0.06), transparent 58%);
   animation: molido-drift 22s ease-in-out infinite;
 }
 
@@ -503,4 +517,42 @@ body::after {
   .btn-primary {
     animation: none;
   }
+}
+
+/* --- 3D signal field --- */
+
+.signal-field {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* Layer order, back to front: field (-3), glow (-2), scan lines (-1),
+     then the page content. */
+  z-index: -3;
+  pointer-events: none;
+  /* The field must never compete with the text sitting on top of it. */
+  opacity: 1;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.7) 60%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.7) 60%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
+
+/* Sections sit on a slight scrim so body text stays readable over the field. */
+.section,
+.footer {
+  position: relative;
+}
+
+.chapter,
+.daily {
+  backdrop-filter: blur(2px);
 }

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import SignalField from "./components/SignalField";
 import Story from "./components/Story";
 import SignalStatus from "./components/SignalStatus";
 import LanguageToggle from "./components/LanguageToggle";
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <LocaleContext.Provider value={ctx}>
+      <SignalField />
       <div className="molido-app">
         <header className="hero">
           <LanguageToggle />
