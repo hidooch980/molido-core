@@ -221,7 +221,7 @@ a {
 }
 
 .chapter-status {
-  margin-left: auto;
+  margin-inline-start: auto;
   font-size: 0.66rem;
   letter-spacing: 0.2em;
   padding: 0.2rem 0.55rem;
@@ -251,4 +251,78 @@ a {
 .chapter-body {
   margin: 0.9rem 0 0;
   line-height: 1.75;
+}
+
+/* --- Language --- */
+
+.lang {
+  align-self: flex-end;
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: auto;
+  padding-top: 1rem;
+}
+
+.lang-btn {
+  font: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: #97a3c2;
+  background: transparent;
+  border: 1px solid rgba(160, 185, 255, 0.22);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: #f4f7ff;
+  border-color: rgba(126, 162, 255, 0.55);
+}
+
+.lang-btn-active {
+  color: #f4f7ff;
+  border-color: rgba(126, 162, 255, 0.7);
+  background: rgba(126, 162, 255, 0.16);
+}
+
+/* Persian needs its own face and a little more line height to stay readable;
+   the Latin stack stays first so English is unaffected. */
+:root:lang(fa),
+[dir="rtl"] {
+  font-family:
+    Vazirmatn, "Noto Naskh Arabic", "IRANSans", Tahoma, ui-sans-serif,
+    system-ui, sans-serif;
+}
+
+[dir="rtl"] .hero-text,
+[dir="rtl"] .section p,
+[dir="rtl"] .chapter-teaser,
+[dir="rtl"] .chapter-body {
+  line-height: 1.95;
+}
+
+/* The display face carries the Latin wordmark; Persian titles need normal
+   letter spacing or the glyphs disconnect. */
+[dir="rtl"] .hero-title,
+[dir="rtl"] .eyebrow,
+[dir="rtl"] .status-label,
+[dir="rtl"] .chapter-stage,
+[dir="rtl"] .chapter-status,
+[dir="rtl"] .chapter-no,
+[dir="rtl"] .section h2,
+[dir="rtl"] .footer p {
+  letter-spacing: normal;
+}
+
+[dir="rtl"] .chapter-teaser {
+  font-style: normal;
+  color: #c2cce6;
+}
+
+/* Chapter numbers stay Latin digits and must not flip inside RTL text. */
+.chapter-no {
+  direction: ltr;
+  unicode-bidi: isolate;
 }

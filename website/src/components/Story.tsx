@@ -1,29 +1,39 @@
-import { chapters, STATUS_LABEL } from "../content/story";
+import { chapters, type ChapterStatus } from "../content/story";
+import { useStrings } from "../i18n/context";
+import type { Strings } from "../i18n/strings";
+
+function statusLabel(status: ChapterStatus, t: Strings): string {
+  switch (status) {
+    case "transmitted":
+      return t.statusTransmitted;
+    case "incoming":
+      return t.statusIncoming;
+    case "sealed":
+      return t.statusSealed;
+  }
+}
 
 function Story() {
+  const { locale, t } = useStrings();
+
   return (
     <section className="section" id="story">
-      <h2>The Story</h2>
-      <p>
-        MOLIDO is a global, AI-powered digital ecosystem built around
-        interactive storytelling, games, community and creativity. THE LAST
-        SIGNAL is its story universe — a single transmission, broken into
-        fragments, uncovered by the people who choose to follow it.
-      </p>
+      <h2>{t.storyHeading}</h2>
+      <p>{t.storyIntro}</p>
 
       <ol className="chapters">
         {chapters.map((c) => (
           <li key={c.id} className={`chapter chapter-${c.status}`}>
             <div className="chapter-head">
               <span className="chapter-no">{String(c.id).padStart(2, "0")}</span>
-              <span className="chapter-stage">{c.stage}</span>
+              <span className="chapter-stage">{c.stage[locale]}</span>
               <span className={`chapter-status status-${c.status}`}>
-                {STATUS_LABEL[c.status]}
+                {statusLabel(c.status, t)}
               </span>
             </div>
-            <h3 className="chapter-title">{c.title}</h3>
-            <p className="chapter-teaser">{c.teaser}</p>
-            {c.body?.map((paragraph, i) => (
+            <h3 className="chapter-title">{c.title[locale]}</h3>
+            <p className="chapter-teaser">{c.teaser[locale]}</p>
+            {c.body?.[locale].map((paragraph, i) => (
               <p key={i} className="chapter-body">
                 {paragraph}
               </p>
@@ -32,10 +42,7 @@ function Story() {
         ))}
       </ol>
 
-      <p className="muted">
-        New fragments are released as the story is written. Nothing here is
-        final except what has already been transmitted.
-      </p>
+      <p className="muted">{t.storyFootnote}</p>
     </section>
   );
 }
