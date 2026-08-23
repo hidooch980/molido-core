@@ -31,7 +31,7 @@ Foundation started.
 - Telegram: Official channel identified
 - YouTube: Official channel identified
 - Website: Live at https://hidooch980.github.io/molido-core/ (GitHub Pages, free tier). Custom-domain steps: docs/DEPLOYMENT.md
-- Game: Not started
+- Game: First playable piece live — the daily fragment puzzle on the website. No accounts, no backend. XP, collection and quests remain unstarted (Phase 3).
 - Blockchain: Future phase
 - AI Media Factory: Architecture defined
 

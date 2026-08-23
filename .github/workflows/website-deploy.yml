@@ -37,6 +37,10 @@ jobs:
         working-directory: website
         run: npm run typecheck
 
+      - name: Test
+        working-directory: website
+        run: npm test
+
       # A CNAME file means a custom domain, which serves from the root
       # rather than the /molido-core/ project sub-path.
       - name: Resolve base path

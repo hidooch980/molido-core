@@ -24,6 +24,16 @@ export interface Strings {
   telegramText: string;
   footerTagline: string;
   languageLabel: string;
+  fragmentHeading: string;
+  fragmentIntro: string;
+  fragmentResolves: string;
+  fragmentExpects: string;
+  fragmentChecksum: string;
+  fragmentPrompt: string;
+  fragmentVerify: string;
+  fragmentCorrect: string;
+  fragmentWrong: string;
+  fragmentShare: string;
 }
 
 export const strings: Localized<Strings> = {
@@ -54,6 +64,16 @@ export const strings: Localized<Strings> = {
     telegramText: "Live signal channel and community.",
     footerTagline: "The signal has arrived. The journey begins now.",
     languageLabel: "Language",
+    fragmentHeading: "The Fragment",
+    fragmentIntro: "Three sections close correctly. The fourth expects fourteen values and has thirteen. Work out the rule from the sections that resolve, then recover the value that is missing.",
+    fragmentResolves: "resolves",
+    fragmentExpects: "expects 14, has 13",
+    fragmentChecksum: "checksum",
+    fragmentPrompt: "Missing value (0–255)",
+    fragmentVerify: "Verify",
+    fragmentCorrect: "The checksum closes. The section is complete.",
+    fragmentWrong: "The checksum does not close.",
+    fragmentShare: "Everyone sees the same fragment today.",
   },
   fa: {
     brand: "مولیدو",
@@ -82,6 +102,16 @@ export const strings: Localized<Strings> = {
     telegramText: "کانال زنده‌ی سیگنال و اجتماع.",
     footerTagline: "سیگنال رسیده است. سفر از همین حالا آغاز می‌شود.",
     languageLabel: "زبان",
+    fragmentHeading: "قطعه",
+    fragmentIntro: "سه بخش درست بسته می‌شوند. بخش چهارم انتظار چهارده مقدار را دارد و سیزده تا دارد. قاعده را از بخش‌هایی که حل می‌شوند به دست بیاور، بعد مقداری را که غایب است بازیابی کن.",
+    fragmentResolves: "حل می‌شود",
+    fragmentExpects: "انتظار ۱۴، دارد ۱۳",
+    fragmentChecksum: "جمع کنترلی",
+    fragmentPrompt: "مقدار غایب (۰ تا ۲۵۵)",
+    fragmentVerify: "بررسی",
+    fragmentCorrect: "جمع کنترلی بسته شد. بخش کامل است.",
+    fragmentWrong: "جمع کنترلی بسته نمی‌شود.",
+    fragmentShare: "امروز همه همین قطعه را می‌بینند.",
   },
   ar: {
     brand: "موليدو",
@@ -110,6 +140,16 @@ export const strings: Localized<Strings> = {
     telegramText: "قناة الإشارة الحية والمجتمع.",
     footerTagline: "وصلت الإشارة. تبدأ الرحلة الآن.",
     languageLabel: "اللغة",
+    fragmentHeading: "الشظية",
+    fragmentIntro: "ثلاثة أقسام تُغلق بشكل صحيح. الرابع يتوقع أربع عشرة قيمة ولديه ثلاث عشرة. استنتج القاعدة من الأقسام التي تُحَل، ثم استرجع القيمة الناقصة.",
+    fragmentResolves: "يُحَل",
+    fragmentExpects: "يتوقع ١٤، لديه ١٣",
+    fragmentChecksum: "المجموع الرقابي",
+    fragmentPrompt: "القيمة الناقصة (٠–٢٥٥)",
+    fragmentVerify: "تحقّق",
+    fragmentCorrect: "المجموع الرقابي أُغلق. القسم مكتمل.",
+    fragmentWrong: "المجموع الرقابي لا يُغلق.",
+    fragmentShare: "الجميع يرى الشظية نفسها اليوم.",
   },
   ur: {
     brand: "مولیڈو",
@@ -138,6 +178,16 @@ export const strings: Localized<Strings> = {
     telegramText: "زندہ سگنل چینل اور برادری۔",
     footerTagline: "سگنل پہنچ چکا ہے۔ سفر ابھی شروع ہوتا ہے۔",
     languageLabel: "زبان",
+    fragmentHeading: "ٹکڑا",
+    fragmentIntro: "تین حصے درست بند ہوتے ہیں۔ چوتھا چودہ اقدار کی توقع کرتا ہے اور اس کے پاس تیرہ ہیں۔ اُن حصوں سے قاعدہ اخذ کریں جو حل ہوتے ہیں، پھر غائب قدر بازیاب کریں۔",
+    fragmentResolves: "حل ہوتا ہے",
+    fragmentExpects: "توقع ۱۴، موجود ۱۳",
+    fragmentChecksum: "چیک سم",
+    fragmentPrompt: "غائب قدر (۰ تا ۲۵۵)",
+    fragmentVerify: "جانچیں",
+    fragmentCorrect: "چیک سم بند ہو گیا۔ حصہ مکمل ہے۔",
+    fragmentWrong: "چیک سم بند نہیں ہوتا۔",
+    fragmentShare: "آج سب یہی ٹکڑا دیکھ رہے ہیں۔",
   },
   hi: {
     brand: "मोलिडो",
@@ -166,6 +216,16 @@ export const strings: Localized<Strings> = {
     telegramText: "लाइव सिग्नल चैनल और समुदाय।",
     footerTagline: "सिग्नल आ चुका है। यात्रा अभी शुरू होती है।",
     languageLabel: "भाषा",
+    fragmentHeading: "टुकड़ा",
+    fragmentIntro: "तीन भाग सही ढंग से बंद होते हैं। चौथा चौदह मानों की अपेक्षा करता है और उसके पास तेरह हैं। जो भाग हल होते हैं उनसे नियम निकालें, फिर लुप्त मान पुनः प्राप्त करें।",
+    fragmentResolves: "हल होता है",
+    fragmentExpects: "अपेक्षा 14, उपलब्ध 13",
+    fragmentChecksum: "चेकसम",
+    fragmentPrompt: "लुप्त मान (0–255)",
+    fragmentVerify: "जाँचें",
+    fragmentCorrect: "चेकसम बंद हो गया। भाग पूर्ण है।",
+    fragmentWrong: "चेकसम बंद नहीं होता।",
+    fragmentShare: "आज सब यही टुकड़ा देख रहे हैं।",
   },
   tr: {
     brand: "MOLIDO",
@@ -194,6 +254,16 @@ export const strings: Localized<Strings> = {
     telegramText: "Canlı sinyal kanalı ve topluluk.",
     footerTagline: "Sinyal ulaştı. Yolculuk şimdi başlıyor.",
     languageLabel: "Dil",
+    fragmentHeading: "Parça",
+    fragmentIntro: "Üç bölüm doğru kapanıyor. Dördüncüsü on dört değer bekliyor ve on üçü var. Kuralı çözülen bölümlerden çıkarın, sonra eksik değeri geri kazanın.",
+    fragmentResolves: "çözülüyor",
+    fragmentExpects: "14 bekliyor, 13 var",
+    fragmentChecksum: "sağlama",
+    fragmentPrompt: "Eksik değer (0–255)",
+    fragmentVerify: "Doğrula",
+    fragmentCorrect: "Sağlama kapandı. Bölüm tamamlandı.",
+    fragmentWrong: "Sağlama kapanmıyor.",
+    fragmentShare: "Bugün herkes aynı parçayı görüyor.",
   },
   az: {
     brand: "MOLIDO",
@@ -222,6 +292,16 @@ export const strings: Localized<Strings> = {
     telegramText: "Canlı siqnal kanalı və icma.",
     footerTagline: "Siqnal gəlib çatdı. Səyahət indi başlayır.",
     languageLabel: "Dil",
+    fragmentHeading: "Parça",
+    fragmentIntro: "Üç bölmə düzgün bağlanır. Dördüncüsü on dörd dəyər gözləyir və on üçü var. Qaydanı həll olunan bölmələrdən çıxarın, sonra əskik dəyəri bərpa edin.",
+    fragmentResolves: "həll olunur",
+    fragmentExpects: "14 gözləyir, 13 var",
+    fragmentChecksum: "yoxlama məbləği",
+    fragmentPrompt: "Əskik dəyər (0–255)",
+    fragmentVerify: "Yoxla",
+    fragmentCorrect: "Yoxlama məbləği bağlandı. Bölmə tamamdır.",
+    fragmentWrong: "Yoxlama məbləği bağlanmır.",
+    fragmentShare: "Bu gün hamı eyni parçanı görür.",
   },
   zh: {
     brand: "MOLIDO",
@@ -250,5 +330,15 @@ export const strings: Localized<Strings> = {
     telegramText: "实时信号频道与社区。",
     footerTagline: "信号已经抵达。旅程由此开始。",
     languageLabel: "语言",
+    fragmentHeading: "片段",
+    fragmentIntro: "三节能正确闭合。第四节期待十四个值，只有十三个。从能解出的那几节里推出规则，然后把缺失的那个值找回来。",
+    fragmentResolves: "已闭合",
+    fragmentExpects: "期待 14，实有 13",
+    fragmentChecksum: "校验和",
+    fragmentPrompt: "缺失的值（0–255）",
+    fragmentVerify: "验证",
+    fragmentCorrect: "校验和闭合了。这一节完整了。",
+    fragmentWrong: "校验和没有闭合。",
+    fragmentShare: "今天所有人看到的是同一个片段。",
   },
 };

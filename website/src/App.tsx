@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import SignalField from "./components/SignalField";
 import Story from "./components/Story";
+import Fragment from "./components/Fragment";
 import SignalStatus from "./components/SignalStatus";
 import LanguageToggle from "./components/LanguageToggle";
 import { LocaleContext } from "./i18n/context";
@@ -48,6 +49,8 @@ function App() {
           <SignalStatus />
 
           <Story />
+
+          <Fragment />
 
           <section className="section" id="community">
             <h2>{t.communityHeading}</h2>
