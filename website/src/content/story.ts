@@ -37,15 +37,23 @@ export const chapters: Chapter[] = [
     id: 2,
     stage: "First Fragment",
     title: "The Incomplete Message",
-    status: "incoming",
+    status: "transmitted",
     teaser:
       "The fragment is not noise. It is structured — and something is missing from it on purpose.",
+    body: [
+      "Noise is easy to recognise. Noise has no opinion about where it ends.",
+      "This has structure. Repeating blocks, consistent spacing, a checksum at the close of each section that resolves correctly — every section except one. In that section the checksum expects fourteen values and receives thirteen.",
+      "The obvious reading is damage: something lost in transit, a gap where the atmosphere or the distance ate a piece of the message. But damaged data does not usually leave the surrounding structure intact, and this structure is untouched on both sides of the hole. The gap is the exact size of the thing that should fill it.",
+      "Which leaves a harder reading. The fragment was not broken on the way here. It was sent incomplete.",
+      "A message you cannot finish is a message. A message that can only be finished by someone doing something is an invitation.",
+      "Nobody has decided yet which one this is.",
+    ],
   },
   {
     id: 3,
     stage: "Hidden Coordinates",
     title: "A Place That Should Be Empty",
-    status: "sealed",
+    status: "incoming",
     teaser: "The fragment resolves to a location. The maps disagree about it.",
   },
   {
