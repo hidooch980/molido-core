@@ -151,3 +151,8 @@ backups/
 # -------------------------
 security/private/
 security/secrets/
+
+# -------------------------
+# Generated media
+# -------------------------
+out/

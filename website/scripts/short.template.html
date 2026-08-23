@@ -1,0 +1,92 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden}
+  body{background:#030409;font-family:Inter,"DejaVu Sans",system-ui,sans-serif;color:#f4f7ff}
+  canvas#field{position:absolute;inset:0}
+  .scan{position:absolute;inset:0;opacity:.3;
+    background:repeating-linear-gradient(to bottom,rgba(255,255,255,.03) 0 2px,transparent 2px 6px)}
+  .stage{position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;padding:0 70px;gap:34px}
+  .layer{position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;padding:0 70px;gap:34px;opacity:0}
+  .kicker{letter-spacing:.5em;font-size:34px;color:#7ea2ff;text-indent:.5em}
+  .big{font-size:96px;font-weight:800;line-height:1.06;letter-spacing:.02em;
+    text-shadow:0 0 50px rgba(126,162,255,.45)}
+  .mid{font-size:52px;font-weight:700;line-height:1.25}
+  .sub{font-size:38px;color:#b9c4e0;line-height:1.5}
+  .blocks{display:flex;flex-direction:column;gap:26px;width:100%}
+  .blk{border:2px solid rgba(160,185,255,.22);border-radius:20px;padding:22px 18px;
+    background:rgba(126,162,255,.05)}
+  .stn{font-size:24px;letter-spacing:.24em;color:#7ea2ff;margin-bottom:14px}
+  .cells{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .c{min-width:104px;padding:12px 8px;font-size:38px;font-variant-numeric:tabular-nums;
+    background:rgba(10,14,30,.8);border:2px solid rgba(160,185,255,.18);border-radius:12px}
+  .url{font-size:40px;letter-spacing:.02em;color:#c6d8ff}
+  .dot{display:inline-block;width:18px;height:18px;border-radius:50%;background:#4ade80;
+    margin-inline-end:16px;vertical-align:middle;box-shadow:0 0 26px rgba(74,222,128,.9)}
+</style></head>
+<body>
+<canvas id="field" width="1080" height="1920"></canvas>
+<div class="scan"></div>
+
+<div class="layer" id="L1">
+  <div class="kicker">MOLIDO</div>
+  <div class="big">ONE VALUE<br>IS MISSING</div>
+</div>
+
+<div class="layer" id="L2">
+  <div class="kicker">__KICKER__</div>
+  <div class="mid">__QUESTION__</div>
+  <div class="blocks">__BLOCKS__</div>
+</div>
+
+<div class="layer" id="L3">
+  <div class="kicker">THE LAST SIGNAL</div>
+  <div class="mid">__CTA__</div>
+  <div class="url">__URL__</div>
+  <div class="sub"><span class="dot"></span>SIGNAL DETECTED</div>
+</div>
+
+<script>
+const FPS = __FPS__, TOTAL = __TOTAL__;
+const g = document.getElementById('field').getContext('2d');
+let seed = 987654321;
+const rnd = () => { seed = (seed*1664525+1013904223)>>>0; return seed/4294967296; };
+const stars = Array.from({length:420},()=>({x:(rnd()-.5)*2600,y:(rnd()-.5)*3400,z:rnd()*900}));
+
+function drawField(t){
+  g.clearRect(0,0,1080,1920);
+  g.fillStyle='#030409'; g.fillRect(0,0,1080,1920);
+  const grd=g.createRadialGradient(540,300,0,540,300,1200);
+  grd.addColorStop(0,'rgba(90,130,255,.22)'); grd.addColorStop(1,'rgba(3,4,9,0)');
+  g.fillStyle=grd; g.fillRect(0,0,1080,1920);
+  for(const s of stars){
+    const z=((s.z - t*90) % 900 + 900) % 900 + 1;
+    const k=340/z, px=540+s.x*k, py=960+s.y*k;
+    if(px<-30||px>1110||py<-30||py>1950) continue;
+    const d=1-z/900;
+    g.beginPath(); g.arc(px,py,Math.max(.7,d*3.4),0,7);
+    g.fillStyle='rgba(198,216,255,'+(0.2+d*0.75).toFixed(3)+')'; g.fill();
+  }
+  const r=(t*150)%1500;
+  g.beginPath(); g.arc(540,960,r,0,7);
+  g.strokeStyle='rgba(126,162,255,'+(0.2*(1-r/1500)).toFixed(3)+')';
+  g.lineWidth=3; g.stroke();
+}
+
+// Cross-fades between the three layers, driven by frame index so every
+// render is identical.
+function fade(t,a,b){ const inn=Math.min(1,(t-a)/0.45), out=Math.min(1,(b-t)/0.45);
+  return Math.max(0, Math.min(inn,out)); }
+
+window.renderFrame = (i) => {
+  const t = i / FPS, dur = TOTAL / FPS;
+  drawField(t);
+  document.getElementById('L1').style.opacity = fade(t, 0.0, dur*0.22);
+  document.getElementById('L2').style.opacity = fade(t, dur*0.20, dur*0.84);
+  document.getElementById('L3').style.opacity = fade(t, dur*0.82, dur + 1);
+};
+window.renderFrame(0);
+</script>
+</body></html>
