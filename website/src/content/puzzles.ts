@@ -18,12 +18,19 @@ export const SECTION_LENGTH = 14;
 
 export type PuzzleKind = "checksum" | "parity" | "period" | "common";
 
-/** Order of rotation. Week 0 gets the first, and so on. */
+/**
+ * Order of rotation. Week 0 gets the first, and so on.
+ *
+ * The order is not arbitrary: the queued daily signals in signals.ts are
+ * written to match the week they land in. Reordering this, or inserting a
+ * kind, shifts every future week and leaves those signals describing a
+ * puzzle nobody is playing. Re-read signals.ts before touching it.
+ */
 export const KINDS: readonly PuzzleKind[] = [
   "checksum",
   "parity",
-  "period",
   "common",
+  "period",
 ];
 
 export interface Section {

@@ -14,6 +14,97 @@ export interface Signal {
  */
 export const signals: Signal[] = [
   {
+    date: "2026-09-06",
+    text: {
+      en: "Every reconstructed section now resolves. The one that never did is still the one that matters.",
+      fa: "هر بخشِ بازسازی‌شده حالا حل می‌شود. آن یکی که هرگز حل نشد، همچنان همانی است که اهمیت دارد.",
+      ar: "كل قسم أُعيد بناؤه يُحَل الآن. القسم الذي لم يُحَل قط هو الذي لا يزال مهمًا.",
+      ur: "ہر دوبارہ بنایا گیا حصہ اب حل ہو جاتا ہے۔ جو کبھی حل نہ ہوا، وہی اب بھی اہم ہے۔",
+      hi: "हर पुनर्निर्मित भाग अब हल हो जाता है। जो कभी हल नहीं हुआ, वही अब भी मायने रखता है।",
+      tr: "Yeniden kurulan her bölüm artık çözülüyor. Hiç çözülmemiş olan, hâlâ önemli olan.",
+      az: "Yenidən qurulan hər bölmə indi həll olunur. Heç vaxt həll olunmayan, hələ də əhəmiyyətli olandır.",
+      zh: "每一节重建后都能解出来了。那一节从来解不出的，仍然是要紧的那一节。",
+    },
+  },
+  {
+    date: "2026-09-05",
+    text: {
+      en: "A station reported its sum before its values. The values arrived four hours later and matched.",
+      fa: "ایستگاهی جمعش را پیش از مقادیرش گزارش کرد. مقادیر چهار ساعت بعد رسیدند و جور درآمدند.",
+      ar: "أبلغت محطة عن مجموعها قبل قيمها. وصلت القيم بعد أربع ساعات وتطابقت.",
+      ur: "ایک اسٹیشن نے اپنی اقدار سے پہلے اپنا مجموعہ بھیجا۔ اقدار چار گھنٹے بعد آئیں اور مطابقت رکھتی تھیں۔",
+      hi: "एक स्टेशन ने अपने मानों से पहले अपना योग भेजा। मान चार घंटे बाद आए और मेल खाए।",
+      tr: "Bir istasyon değerlerinden önce toplamını bildirdi. Değerler dört saat sonra geldi ve uydu.",
+      az: "Bir stansiya dəyərlərindən əvvəl cəmini bildirdi. Dəyərlər dörd saat sonra gəldi və uyğun gəldi.",
+      zh: "有个台站先报了它的和，后报值。值在四小时后到达，对上了。",
+    },
+  },
+  {
+    date: "2026-09-04",
+    text: {
+      en: "Two readers reached the same missing value from different halves of the block.",
+      fa: "دو خواننده از دو نیمه‌ی متفاوت بلوک به همان مقدار غایب رسیدند.",
+      ar: "وصل قارئان إلى القيمة الناقصة نفسها من نصفين مختلفين من الكتلة.",
+      ur: "دو قارئین بلاک کے مختلف نصف حصوں سے ایک ہی غائب قدر تک پہنچے۔",
+      hi: "दो पाठक खंड के अलग-अलग हिस्सों से उसी लुप्त मान तक पहुँचे।",
+      tr: "İki okur, bloğun farklı yarılarından aynı eksik değere ulaştı.",
+      az: "İki oxucu blokun fərqli yarılarından eyni əskik dəyərə çatdı.",
+      zh: "两位读者从区块的不同半边，得出了同一个缺失的值。",
+    },
+  },
+  {
+    date: "2026-09-03",
+    text: {
+      en: "The sums are being checked by hand again. Machines agree, which is not the same as being right.",
+      fa: "جمع‌ها دوباره با دست بررسی می‌شوند. ماشین‌ها موافق‌اند، که با درست بودن یکی نیست.",
+      ar: "تُراجَع المجاميع باليد من جديد. الآلات متفقة، وهذا ليس كالصواب.",
+      ur: "مجموعے دوبارہ ہاتھ سے جانچے جا رہے ہیں۔ مشینیں متفق ہیں، جو درست ہونے کے برابر نہیں۔",
+      hi: "योग फिर से हाथ से जाँचे जा रहे हैं। मशीनें सहमत हैं, जो सही होने के बराबर नहीं है।",
+      tr: "Toplamlar yeniden elle denetleniyor. Makineler hemfikir; bu, doğru olmakla aynı şey değil.",
+      az: "Cəmlər yenidən əllə yoxlanılır. Maşınlar razıdır, bu isə doğru olmaqla eyni deyil.",
+      zh: "这些和又开始用手核对了。机器一致，而一致并不等于正确。",
+    },
+  },
+  {
+    date: "2026-09-02",
+    text: {
+      en: "Checksums are closing across the archive. Thirteen sections rebuilt from partial records.",
+      fa: "جمع‌های کنترلی در سراسر بایگانی بسته می‌شوند. سیزده بخش از روی سوابق ناقص بازسازی شد.",
+      ar: "المجاميع الرقابية تُغلق عبر الأرشيف. أُعيد بناء ثلاثة عشر قسمًا من سجلات ناقصة.",
+      ur: "پورے آرکائیو میں چیک سم بند ہو رہے ہیں۔ تیرہ حصے نامکمل ریکارڈ سے دوبارہ بنائے گئے۔",
+      hi: "पूरे अभिलेख में चेकसम बंद हो रहे हैं। तेरह भाग अधूरे अभिलेखों से पुनर्निर्मित हुए।",
+      tr: "Arşiv genelinde sağlamalar kapanıyor. Kısmi kayıtlardan on üç bölüm yeniden kuruldu.",
+      az: "Arxiv boyu yoxlama məbləğləri bağlanır. Natamam qeydlərdən on üç bölmə yenidən quruldu.",
+      zh: "整个档案里的校验和陆续闭合。十三节从残缺记录中重建。",
+    },
+  },
+  {
+    date: "2026-09-01",
+    text: {
+      en: "Back to arithmetic. If a section is short one value, the sum already knows which one.",
+      fa: "بازگشت به حساب. اگر بخشی یک مقدار کم داشته باشد، جمع از قبل می‌داند کدام است.",
+      ar: "عودة إلى الحساب. إن نقص القسم قيمة واحدة، فالمجموع يعرف أيها سلفًا.",
+      ur: "واپس حساب کی طرف۔ اگر کسی حصے میں ایک قدر کم ہو، تو مجموعہ پہلے سے جانتا ہے کہ کون سی۔",
+      hi: "वापस अंकगणित पर। यदि किसी भाग में एक मान कम है, तो योग पहले से जानता है कि कौन-सा।",
+      tr: "Yeniden aritmetiğe. Bir bölümde tek bir değer eksikse, toplam hangisi olduğunu zaten biliyor.",
+      az: "Yenidən hesaba. Bir bölmədə tək dəyər əskikdirsə, cəm onun hansı olduğunu artıq bilir.",
+      zh: "回到算术。若一节少了一个值，那个和其实已经知道少的是哪一个。",
+    },
+  },
+  {
+    date: "2026-08-31",
+    text: {
+      en: "The repeat held for six days and then the carrier changed shape. A new structure is arriving.",
+      fa: "تکرار شش روز دوام آورد و بعد حامل شکلش را عوض کرد. ساختار تازه‌ای در راه است.",
+      ar: "صمد التكرار ستة أيام ثم غيّر الحامل شكله. بنية جديدة في الطريق.",
+      ur: "دہرائی چھ دن قائم رہی، پھر کیریئر نے اپنی شکل بدل دی۔ ایک نئی ساخت آ رہی ہے۔",
+      hi: "दोहराव छह दिन टिका, फिर वाहक ने अपना आकार बदल दिया। एक नई संरचना आ रही है।",
+      tr: "Tekrar altı gün sürdü, sonra taşıyıcı biçim değiştirdi. Yeni bir yapı geliyor.",
+      az: "Təkrar altı gün davam etdi, sonra daşıyıcı formasını dəyişdi. Yeni bir quruluş gəlir.",
+      zh: "重复持续了六天，随后载波换了形状。一种新的结构正在到来。",
+    },
+  },
+  {
     date: "2026-08-30",
     text: {
       en: "Cycle length agreed on across every station that reported. The carrier is not drifting.",

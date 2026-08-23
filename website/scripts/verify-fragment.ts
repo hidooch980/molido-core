@@ -167,6 +167,24 @@ for (const kind of KINDS) {
   );
 }
 
+// Queued signals are written to match the puzzle their week runs. Adding a
+// puzzle kind shifts the whole rotation, so this pins the weeks that already
+// have signals written for them - the mismatch is silent otherwise.
+{
+  const pinned: Record<string, PuzzleKind> = {
+    "2026-08-24": "period",
+    "2026-08-30": "period",
+    "2026-08-31": "checksum",
+    "2026-09-06": "checksum",
+  };
+  for (const [day, expected] of Object.entries(pinned)) {
+    check(
+      kindFor(day) === expected,
+      `${day}: runs "${kindFor(day)}" but its queued signals were written for "${expected}" - reordering KINDS shifts every week`,
+    );
+  }
+}
+
 // Daily signals: a queued entry must stay hidden until its own day, or
 // writing a week ahead publishes the whole week at once.
 {
