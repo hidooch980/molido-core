@@ -1,18 +1,16 @@
-import ReactDOM from "react-dom/client";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./styles.css";
 
-
 const rootElement = document.getElementById("root");
 
-
 if (rootElement === null) {
-throw new Error("MOLIDO root element not found");
+  throw new Error("MOLIDO root element #root not found in index.html");
 }
 
-
-const root = ReactDOM.createRoot(rootElement);
-
-
-root.render(App());
-
+createRoot(rootElement).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);
