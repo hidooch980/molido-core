@@ -1,72 +1,128 @@
 /**
- * The fragment puzzle has to have exactly one answer, every day, forever.
+ * Every puzzle must have exactly one answer, every day, for every kind.
  *
- * A puzzle with two valid answers is worse than no puzzle: a reader who
- * solves it correctly gets told they are wrong. This runs in CI so a change
- * to the checksum rule cannot ship that quietly.
+ * A puzzle with two valid answers tells a correct solver they are wrong,
+ * and one with none is unsolvable. Both are worse than shipping no puzzle,
+ * so this runs in CI.
  */
 import {
-  fragmentFor,
+  puzzleFor,
   isCorrect,
+  answerRange,
+  kindFor,
+  KINDS,
   MODULUS,
   SECTION_LENGTH,
-} from "../src/content/fragment";
+  type PuzzleKind,
+} from "../src/content/puzzles";
 
 const failures: string[] = [];
+const seen: Record<string, number> = {};
 
 function check(condition: boolean, message: string): void {
   if (!condition) failures.push(message);
 }
 
-// A year of consecutive days, plus a leap day.
 const days: string[] = ["2028-02-29"];
 for (let i = 0; i < 366; i++) {
-  const d = new Date(Date.UTC(2026, 7, 23) + i * 86400000);
-  days.push(d.toISOString().slice(0, 10));
+  days.push(
+    new Date(Date.UTC(2026, 7, 23) + i * 86400000).toISOString().slice(0, 10),
+  );
 }
 
 for (const day of days) {
-  const fragment = fragmentFor(day);
+  const puzzle = puzzleFor(day);
+  const kind: PuzzleKind = puzzle.kind;
+  seen[kind] = (seen[kind] ?? 0) + 1;
 
+  check(kind === kindFor(day), `${day}: kind disagrees with the weekly schedule`);
   check(
-    JSON.stringify(fragment) === JSON.stringify(fragmentFor(day)),
+    JSON.stringify(puzzle) === JSON.stringify(puzzleFor(day)),
     `${day}: not deterministic`,
   );
-  check(
-    fragment.incomplete.values.length === SECTION_LENGTH - 1,
-    `${day}: incomplete section is the wrong length`,
-  );
-  check(isCorrect(fragment, fragment.answer), `${day}: answer does not verify`);
-  check(
-    fragment.answer >= 0 && fragment.answer < MODULUS,
-    `${day}: answer outside 0..${MODULUS - 1}`,
-  );
 
-  for (const section of fragment.solved) {
-    const sum = section.values.reduce((a, v) => (a + v) % MODULUS, 0);
-    check(sum === section.checksum, `${day}: a solved section does not resolve`);
-  }
-
+  // Exactly one answer in range, and nothing valid outside it.
+  const { min, max } = answerRange(puzzle);
   let valid = 0;
-  for (let guess = 0; guess < MODULUS; guess++) {
-    if (isCorrect(fragment, guess)) valid++;
+  for (let guess = min; guess <= max; guess++) {
+    if (isCorrect(puzzle, guess)) valid++;
   }
-  check(valid === 1, `${day}: ${valid} valid answers, expected exactly 1`);
+  check(valid === 1, `${day} (${kind}): ${valid} valid answers, expected 1`);
+
+  if (puzzle.kind === "checksum") {
+    check(
+      puzzle.values.length === SECTION_LENGTH - 1,
+      `${day}: incomplete section is the wrong length`,
+    );
+    for (const s of puzzle.solved) {
+      const sum = s.values.reduce((a, v) => (a + v) % MODULUS, 0);
+      check(sum === s.checksum, `${day}: a teaching section does not resolve`);
+    }
+  }
+
+  if (puzzle.kind === "parity") {
+    // The corrupted cell must be the unique intersection of the one row and
+    // the one column whose parity disagrees.
+    const size = puzzle.grid.length;
+    const badRows: number[] = [];
+    const badCols: number[] = [];
+    for (let r = 0; r < size; r++) {
+      const p = puzzle.grid[r].reduce((a, v) => (a + v) % MODULUS, 0) % 2;
+      if (p !== puzzle.rowParity[r]) badRows.push(r);
+    }
+    for (let c = 0; c < size; c++) {
+      const p =
+        puzzle.grid.reduce((a, row) => (a + row[c]) % MODULUS, 0) % 2;
+      if (p !== puzzle.colParity[c]) badCols.push(c);
+    }
+    check(badRows.length === 1, `${day}: ${badRows.length} rows disagree, expected 1`);
+    check(badCols.length === 1, `${day}: ${badCols.length} columns disagree, expected 1`);
+    if (badRows.length === 1 && badCols.length === 1) {
+      check(
+        badRows[0] * size + badCols[0] + 1 === puzzle.answer,
+        `${day}: the disagreeing cell is not the stated answer`,
+      );
+    }
+  }
+
+  if (puzzle.kind === "period") {
+    // No shorter period may also fit, or the answer is ambiguous.
+    for (let p = 1; p < puzzle.answer; p++) {
+      const fits = puzzle.values.every((v, i) => v === puzzle.values[i % p]);
+      check(!fits, `${day}: period ${p} also fits, answer ${puzzle.answer} is ambiguous`);
+    }
+    check(
+      puzzle.values.every((v, i) => v === puzzle.values[i % puzzle.answer]),
+      `${day}: the stated period does not actually fit`,
+    );
+    check(
+      puzzle.values.length % puzzle.answer === 0,
+      `${day}: sequence stops mid-cycle, which hints at a longer period`,
+    );
+  }
 }
 
-// Consecutive days must not repeat, or the puzzle is the same every morning.
+// Consecutive days must differ, or the puzzle is the same every morning.
 for (let i = 1; i < days.length; i++) {
   check(
-    JSON.stringify(fragmentFor(days[i])) !==
-      JSON.stringify(fragmentFor(days[i - 1])),
+    JSON.stringify(puzzleFor(days[i])) !== JSON.stringify(puzzleFor(days[i - 1])),
     `${days[i]}: identical to the previous day`,
   );
 }
 
+// Every kind must actually appear over a year.
+for (const kind of KINDS) {
+  check(
+    (seen[kind] ?? 0) > 0,
+    `kind "${kind}" never appeared across ${days.length} days`,
+  );
+}
+
 if (failures.length > 0) {
-  console.error(`fragment: ${failures.length} failure(s)`);
+  console.error(`puzzles: ${failures.length} failure(s)`);
   for (const f of failures.slice(0, 20)) console.error("  " + f);
   process.exit(1);
 }
 
-console.log(`fragment: ${days.length} days checked, one solution each`);
+const spread = KINDS.map((k) => `${k}=${seen[k] ?? 0}`).join(" ");
+console.log(`puzzles: ${days.length} days checked, one solution each — ${spread}`);

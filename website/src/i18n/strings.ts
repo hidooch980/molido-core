@@ -34,6 +34,12 @@ export interface Strings {
   fragmentCorrect: string;
   fragmentWrong: string;
   fragmentShare: string;
+  parityIntro: string;
+  parityPrompt: string;
+  parityRow: string;
+  parityColumn: string;
+  periodIntro: string;
+  periodPrompt: string;
 }
 
 export const strings: Localized<Strings> = {
@@ -74,6 +80,12 @@ export const strings: Localized<Strings> = {
     fragmentCorrect: "The checksum closes. The section is complete.",
     fragmentWrong: "The checksum does not close.",
     fragmentShare: "Everyone sees the same fragment today.",
+    parityIntro: "The block arrived with a parity mark for every row and every column. One cell was corrupted in transit, so exactly one row and one column now disagree. Find where they cross.",
+    parityPrompt: "Corrupted cell (1–25)",
+    parityRow: "row",
+    parityColumn: "column",
+    periodIntro: "The carrier repeats. A fixed run of values is transmitted over and over with nothing between the repeats. Work out how long that run is.",
+    periodPrompt: "Repeat length",
   },
   fa: {
     brand: "مولیدو",
@@ -112,6 +124,12 @@ export const strings: Localized<Strings> = {
     fragmentCorrect: "جمع کنترلی بسته شد. بخش کامل است.",
     fragmentWrong: "جمع کنترلی بسته نمی‌شود.",
     fragmentShare: "امروز همه همین قطعه را می‌بینند.",
+    parityIntro: "این بلوک با یک نشانِ توازن برای هر سطر و هر ستون رسیده است. یک خانه در مسیر خراب شده، پس دقیقاً یک سطر و یک ستون ناسازگارند. محل تلاقی‌شان را پیدا کن.",
+    parityPrompt: "خانه‌ی خراب (۱ تا ۲۵)",
+    parityRow: "سطر",
+    parityColumn: "ستون",
+    periodIntro: "حامل تکرار می‌شود. یک رشته‌ی ثابت از مقادیر بارها و بارها فرستاده می‌شود، بدون هیچ چیزی میان تکرارها. طول آن رشته را به دست بیاور.",
+    periodPrompt: "طول تکرار",
   },
   ar: {
     brand: "موليدو",
@@ -150,6 +168,12 @@ export const strings: Localized<Strings> = {
     fragmentCorrect: "المجموع الرقابي أُغلق. القسم مكتمل.",
     fragmentWrong: "المجموع الرقابي لا يُغلق.",
     fragmentShare: "الجميع يرى الشظية نفسها اليوم.",
+    parityIntro: "وصلت الكتلة بعلامة تكافؤ لكل صف ولكل عمود. تلف خانة واحدة في الطريق، فصار صف واحد وعمود واحد بالضبط غير متوافقين. جد موضع تقاطعهما.",
+    parityPrompt: "الخانة التالفة (١–٢٥)",
+    parityRow: "صف",
+    parityColumn: "عمود",
+    periodIntro: "الحامل يتكرر. تُرسل سلسلة ثابتة من القيم مرارًا وتكرارًا بلا شيء بين التكرارات. استنتج طول تلك السلسلة.",
+    periodPrompt: "طول التكرار",
   },
   ur: {
     brand: "مولیڈو",
@@ -188,6 +212,12 @@ export const strings: Localized<Strings> = {
     fragmentCorrect: "چیک سم بند ہو گیا۔ حصہ مکمل ہے۔",
     fragmentWrong: "چیک سم بند نہیں ہوتا۔",
     fragmentShare: "آج سب یہی ٹکڑا دیکھ رہے ہیں۔",
+    parityIntro: "یہ بلاک ہر سطر اور ہر کالم کے لیے ایک پیریٹی نشان کے ساتھ پہنچا۔ راستے میں ایک خانہ خراب ہوا، اس لیے بالکل ایک سطر اور ایک کالم اب متضاد ہیں۔ ان کے ملنے کی جگہ تلاش کریں۔",
+    parityPrompt: "خراب خانہ (۱ تا ۲۵)",
+    parityRow: "سطر",
+    parityColumn: "کالم",
+    periodIntro: "کیریئر دہراتا ہے۔ اقدار کی ایک مقررہ لڑی بار بار بھیجی جاتی ہے، دہرائیوں کے درمیان کچھ نہیں۔ اس لڑی کی لمبائی معلوم کریں۔",
+    periodPrompt: "دہرائی کی لمبائی",
   },
   hi: {
     brand: "मोलिडो",
@@ -226,6 +256,12 @@ export const strings: Localized<Strings> = {
     fragmentCorrect: "चेकसम बंद हो गया। भाग पूर्ण है।",
     fragmentWrong: "चेकसम बंद नहीं होता।",
     fragmentShare: "आज सब यही टुकड़ा देख रहे हैं।",
+    parityIntro: "यह खंड हर पंक्ति और हर स्तंभ के लिए एक पैरिटी चिह्न के साथ आया। रास्ते में एक कोष्ठ बिगड़ा, इसलिए ठीक एक पंक्ति और एक स्तंभ अब असहमत हैं। उनका कटान बिंदु खोजें।",
+    parityPrompt: "बिगड़ा कोष्ठ (1–25)",
+    parityRow: "पंक्ति",
+    parityColumn: "स्तंभ",
+    periodIntro: "वाहक दोहराता है। मानों की एक निश्चित लड़ी बार-बार भेजी जाती है, दोहरावों के बीच कुछ नहीं। उस लड़ी की लंबाई निकालें।",
+    periodPrompt: "दोहराव की लंबाई",
   },
   tr: {
     brand: "MOLIDO",
@@ -264,6 +300,12 @@ export const strings: Localized<Strings> = {
     fragmentCorrect: "Sağlama kapandı. Bölüm tamamlandı.",
     fragmentWrong: "Sağlama kapanmıyor.",
     fragmentShare: "Bugün herkes aynı parçayı görüyor.",
+    parityIntro: "Blok, her satır ve her sütun için bir eşlik imiyle geldi. Yolda tek bir hücre bozuldu, bu yüzden tam olarak bir satır ve bir sütun artık uyuşmuyor. Kesiştikleri yeri bulun.",
+    parityPrompt: "Bozuk hücre (1–25)",
+    parityRow: "satır",
+    parityColumn: "sütun",
+    periodIntro: "Taşıyıcı tekrar ediyor. Sabit bir değer dizisi, aralarında hiçbir şey olmadan tekrar tekrar gönderiliyor. O dizinin uzunluğunu bulun.",
+    periodPrompt: "Tekrar uzunluğu",
   },
   az: {
     brand: "MOLIDO",
@@ -302,6 +344,12 @@ export const strings: Localized<Strings> = {
     fragmentCorrect: "Yoxlama məbləği bağlandı. Bölmə tamamdır.",
     fragmentWrong: "Yoxlama məbləği bağlanmır.",
     fragmentShare: "Bu gün hamı eyni parçanı görür.",
+    parityIntro: "Blok hər sətir və hər sütun üçün bir cütlük işarəsi ilə gəldi. Yolda bir xana zədələndi, ona görə də dəqiq bir sətir və bir sütun indi uyğun gəlmir. Kəsişdikləri yeri tapın.",
+    parityPrompt: "Zədəli xana (1–25)",
+    parityRow: "sətir",
+    parityColumn: "sütun",
+    periodIntro: "Daşıyıcı təkrarlanır. Sabit bir dəyər ardıcıllığı, təkrarlar arasında heç nə olmadan dönə-dönə göndərilir. O ardıcıllığın uzunluğunu tapın.",
+    periodPrompt: "Təkrar uzunluğu",
   },
   zh: {
     brand: "MOLIDO",
@@ -340,5 +388,11 @@ export const strings: Localized<Strings> = {
     fragmentCorrect: "校验和闭合了。这一节完整了。",
     fragmentWrong: "校验和没有闭合。",
     fragmentShare: "今天所有人看到的是同一个片段。",
+    parityIntro: "这一区块随每一行、每一列的校验位一起到达。途中有一格被损坏，于是恰好有一行和一列不再吻合。找出它们相交的位置。",
+    parityPrompt: "损坏的格子（1–25）",
+    parityRow: "行",
+    parityColumn: "列",
+    periodIntro: "载波在重复。一段固定长度的值被一遍遍发送，重复之间没有任何东西。算出这段有多长。",
+    periodPrompt: "重复长度",
   },
 };

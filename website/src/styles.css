@@ -678,3 +678,35 @@ body::after {
 
 .frag-correct { color: #4ade80; }
 .frag-wrong   { color: #f7a1a1; }
+
+/* --- Parity grid --- */
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.grid-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.grid-cols {
+  margin-top: 0.35rem;
+  padding-top: 0.45rem;
+  border-top: 1px dashed rgba(160, 185, 255, 0.18);
+}
+
+.parity-mark {
+  font-size: 0.7rem;
+  color: #97a3c2;
+  white-space: nowrap;
+}
+
+.cell-parity {
+  color: #facc15;
+  border-color: rgba(250, 204, 21, 0.35);
+}
