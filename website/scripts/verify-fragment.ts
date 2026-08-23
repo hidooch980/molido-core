@@ -6,6 +6,7 @@
  * so this runs in CI.
  */
 import { shareText } from "../src/content/share";
+import { currentSignal, signals } from "../src/content/signals";
 import {
   puzzleFor,
   isCorrect,
@@ -143,6 +144,52 @@ for (const kind of KINDS) {
   );
 }
 
+// Daily signals: a queued entry must stay hidden until its own day, or
+// writing a week ahead publishes the whole week at once.
+{
+  const LOCALES = ["en", "fa", "ar", "ur", "hi", "tr", "az", "zh"] as const;
+  const dates = new Set<string>();
+
+  for (const signal of signals) {
+    check(!dates.has(signal.date), `signal ${signal.date}: duplicate date`);
+    dates.add(signal.date);
+    check(
+      /^\d{4}-\d{2}-\d{2}$/.test(signal.date),
+      `signal ${signal.date}: date is not YYYY-MM-DD`,
+    );
+    for (const locale of LOCALES) {
+      check(
+        signal.text[locale].trim().length > 0,
+        `signal ${signal.date}: ${locale} is empty`,
+      );
+    }
+  }
+
+  const sorted = [...signals].map((s) => s.date).sort();
+  for (const day of sorted) {
+    const shown = currentSignal(day);
+    check(shown !== undefined, `signal ${day}: nothing shown`);
+    if (!shown) continue;
+    check(shown.date <= day, `signal ${day}: leaked a future entry ${shown.date}`);
+    const newest = signals
+      .filter((s) => s.date <= day)
+      .reduce((a, b) => (b.date > a.date ? b : a));
+    check(
+      shown.date === newest.date,
+      `signal ${day}: showed ${shown.date}, newest available is ${newest.date}`,
+    );
+  }
+
+  // The day before the earliest entry must not show anything.
+  const earliest = sorted[0];
+  const before = new Date(`${earliest}T00:00:00Z`);
+  before.setUTCDate(before.getUTCDate() - 1);
+  check(
+    currentSignal(before.toISOString().slice(0, 10)) === undefined,
+    `signal: an entry showed before the earliest date ${earliest}`,
+  );
+}
+
 if (failures.length > 0) {
   console.error(`puzzles: ${failures.length} failure(s)`);
   for (const f of failures.slice(0, 20)) console.error("  " + f);
@@ -150,4 +197,7 @@ if (failures.length > 0) {
 }
 
 const spread = KINDS.map((k) => `${k}=${seen[k] ?? 0}`).join(" ");
-console.log(`puzzles: ${days.length} days checked, one solution each — ${spread}`);
+console.log(
+  `puzzles: ${days.length} days checked, one solution each — ${spread}`,
+);
+console.log(`signals: ${signals.length} queued, none published early`);
