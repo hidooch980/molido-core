@@ -30,7 +30,7 @@ Foundation started.
 - GitHub: Active
 - Telegram: Official channel identified
 - YouTube: Official channel identified
-- Website: Not deployed yet
+- Website: Live at https://hidooch980.github.io/molido-core/ (GitHub Pages, free tier)
 - Game: Not started
 - Blockchain: Future phase
 - AI Media Factory: Architecture defined

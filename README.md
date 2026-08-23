@@ -2,6 +2,8 @@
 
 ### The Last Signal
 
+**[Visit the site →](https://hidooch980.github.io/molido-core/)** · [Telegram](https://t.me/Molidoo) · [YouTube](https://youtube.com/@molido-v7z)
+
 MOLIDO is a global, AI-powered digital ecosystem built around interactive storytelling, games, community, creativity, and future decentralized technology.
 
 The signal has arrived. The journey begins now.
@@ -557,12 +559,17 @@ The next development phase can begin without rebuilding the foundation.
 - Telegram: @Molidoo
 - YouTube: @molido-v7z
 - GitHub: hidooch980/molido-core
+- Website: https://hidooch980.github.io/molido-core/
 
-- The Beginning
-- MOLIDO does not begin with expensive infrastructure.
-- It begins with an idea.
-- It begins with a story.
-- It begins with one signal.
+### The Beginning
+
+MOLIDO does not begin with expensive infrastructure.
+
+It begins with an idea.
+
+It begins with a story.
+
+It begins with one signal.
 
 The signal has arrived.
 
