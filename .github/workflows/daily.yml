@@ -41,10 +41,10 @@ jobs:
         working-directory: website
         run: npm install
 
-      - name: Install renderer
+      - name: Install renderer (Playwright + ffmpeg)
         working-directory: website
         run: |
-          npm install --no-save playwright
+          npm install --no-save playwright ffmpeg-static
           npx playwright install --with-deps chromium
 
       - name: Resolve date

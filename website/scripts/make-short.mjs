@@ -123,7 +123,23 @@ const outDir = resolve(HERE, "../../out");
 mkdirSync(outDir, { recursive: true });
 const outFile = `${outDir}/short-${date}-${localeArg}.mp4`;
 
-const ffmpegPath = process.env.FFMPEG ?? "ffmpeg";
+/**
+ * Find ffmpeg. GitHub's runners do not ship it, so fall back to the
+ * ffmpeg-static package when it is available rather than failing with a
+ * bare ENOENT that says nothing about the fix.
+ */
+async function findFfmpeg() {
+  if (process.env.FFMPEG) return process.env.FFMPEG;
+  try {
+    const mod = await import("ffmpeg-static");
+    if (mod.default) return mod.default;
+  } catch {
+    // Not installed; fall through to whatever is on PATH.
+  }
+  return "ffmpeg";
+}
+
+const ffmpegPath = await findFfmpeg();
 const ff = spawn(
   ffmpegPath,
   [
@@ -135,6 +151,15 @@ const ff = spawn(
 );
 let ffErr = "";
 ff.stderr.on("data", (d) => (ffErr += d.toString()));
+ff.on("error", (err) => {
+  if (err.code === "ENOENT") {
+    console.error(
+      `\nffmpeg not found at "${ffmpegPath}". Install it, or run:\n` +
+        `  npm i -D ffmpeg-static\n` +
+        `or set FFMPEG to an ffmpeg binary.`,
+    );
+  }
+});
 
 const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH || undefined,
