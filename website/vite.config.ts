@@ -11,10 +11,25 @@ import react from "@vitejs/plugin-react";
 // attached, so switching does not need a code change.
 const PROJECT_PATH = "/molido-core/";
 
+/** Where the site actually lives, for tags that need an absolute URL. */
+const PROJECT_URL = "https://hidooch980.github.io/molido-core/";
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "VITE_");
+  const base = env.VITE_BASE || PROJECT_PATH;
+  // og:image is fetched by other servers, so a relative path is useless -
+  // it has to be absolute. Attaching a domain overrides this.
+  const siteUrl = env.VITE_SITE_URL || PROJECT_URL;
+
   return {
-    base: env.VITE_BASE || PROJECT_PATH,
-    plugins: [react()],
+    base,
+    plugins: [
+      react(),
+      {
+        name: "molido-site-url",
+        transformIndexHtml: (html: string) =>
+          html.replaceAll("%SITE_URL%", siteUrl),
+      },
+    ],
   };
 });
