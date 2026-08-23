@@ -18,6 +18,12 @@ export const signals: Signal[] = [
     text: {
       en: "Fourth fragment resolved. Three continents reported the same checksum gap within nine hours of each other.",
       fa: "چهارمین قطعه حل شد. سه قاره در فاصله‌ی نُه ساعت از هم، همان شکافِ جمع کنترلی را گزارش کردند.",
+      ar: "حُلَّت الشظية الرابعة. أبلغت ثلاث قارات عن الفجوة نفسها في المجموع الرقابي خلال تسع ساعات من بعضها.",
+      ur: "چوتھا ٹکڑا حل ہو گیا۔ تین براعظموں نے نو گھنٹوں کے اندر ایک ہی چیک سم خلا کی اطلاع دی۔",
+      hi: "चौथा टुकड़ा सुलझा। तीन महाद्वीपों ने नौ घंटों के भीतर एक ही चेकसम अंतराल की सूचना दी।",
+      tr: "Dördüncü parça çözüldü. Üç kıta, birbirinden dokuz saat içinde aynı sağlama boşluğunu bildirdi.",
+      az: "Dördüncü parça həll olundu. Üç qitə bir-birindən doqquz saat ərzində eyni yoxlama boşluğunu bildirdi.",
+      zh: "第四个片段已解析。三块大陆在九小时内报告了相同的校验和缺口。",
     },
   },
   {
@@ -25,6 +31,12 @@ export const signals: Signal[] = [
     text: {
       en: "Archive sweep complete. Seventeen station logs preserved and checksummed.",
       fa: "پویش بایگانی کامل شد. گزارش هفده ایستگاه نگهداری و مهر کنترلی شد.",
+      ar: "اكتمل مسح الأرشيف. حُفظت سجلات سبع عشرة محطة وخُتمت بمجموع رقابي.",
+      ur: "آرکائیو کی جانچ مکمل۔ سترہ اسٹیشنوں کے ریکارڈ محفوظ اور چیک سم شدہ۔",
+      hi: "अभिलेख जाँच पूरी। सत्रह स्टेशनों के अभिलेख सुरक्षित और चेकसम किए गए।",
+      tr: "Arşiv taraması tamam. On yedi istasyon kaydı saklandı ve sağlaması alındı.",
+      az: "Arxiv taraması tamamlandı. On yeddi stansiya qeydi saxlanıldı və yoxlanıldı.",
+      zh: "档案扫描完成。十七个台站记录已保存并计算校验和。",
     },
   },
   {
@@ -32,6 +44,12 @@ export const signals: Signal[] = [
     text: {
       en: "Carrier re-established. Foundation online.",
       fa: "حامل دوباره برقرار شد. پایه‌ها آنلاین.",
+      ar: "أُعيد إنشاء الحامل. الأساس متصل.",
+      ur: "کیریئر دوبارہ قائم۔ بنیاد آن لائن۔",
+      hi: "वाहक पुनः स्थापित। नींव ऑनलाइन।",
+      tr: "Taşıyıcı yeniden kuruldu. Temel çevrimiçi.",
+      az: "Daşıyıcı yenidən quruldu. Təməl onlayndır.",
+      zh: "载波已重建。基础已上线。",
     },
   },
 ];

@@ -261,41 +261,79 @@ a {
   top: 1rem;
   inset-inline-end: 0;
   display: flex;
-  gap: 0.35rem;
+  align-items: center;
+  gap: 0.5rem;
   z-index: 2;
 }
 
-.lang-btn {
+.lang-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: #8892ad;
+  text-transform: uppercase;
+}
+
+.lang-select {
   font: inherit;
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  color: #97a3c2;
-  background: transparent;
-  border: 1px solid rgba(160, 185, 255, 0.22);
+  font-size: 0.82rem;
+  color: #f4f7ff;
+  background: rgba(10, 14, 30, 0.92);
+  border: 1px solid rgba(160, 185, 255, 0.28);
   border-radius: 999px;
-  padding: 0.3rem 0.8rem;
+  padding: 0.32rem 0.7rem;
   cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.lang-btn:hover {
-  color: #f4f7ff;
-  border-color: rgba(126, 162, 255, 0.55);
-}
-
-.lang-btn-active {
-  color: #f4f7ff;
+.lang-select:hover,
+.lang-select:focus-visible {
   border-color: rgba(126, 162, 255, 0.7);
-  background: rgba(126, 162, 255, 0.16);
+}
+
+.lang-select option {
+  background: #0a0e1e;
+  color: #f4f7ff;
 }
 
 /* Persian needs its own face and a little more line height to stay readable;
    the Latin stack stays first so English is unaffected. */
-:root:lang(fa),
-[dir="rtl"] {
+:lang(fa) {
   font-family:
-    Vazirmatn, "Noto Naskh Arabic", "IRANSans", Tahoma, ui-sans-serif,
+    Vazirmatn, "Noto Naskh Arabic", IRANSans, Tahoma, ui-sans-serif,
     system-ui, sans-serif;
+}
+
+:lang(ar) {
+  font-family:
+    "Noto Naskh Arabic", "Segoe UI", Tahoma, ui-sans-serif, system-ui,
+    sans-serif;
+}
+
+/* Urdu is set in Nastaliq where the reader has it; the fallbacks keep it
+   readable rather than pretty. */
+:lang(ur) {
+  font-family:
+    "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Noto Naskh Arabic",
+    Tahoma, ui-sans-serif, sans-serif;
+  line-height: 2.15;
+}
+
+:lang(hi) {
+  font-family:
+    "Noto Sans Devanagari", "Nirmala UI", Mangal, ui-sans-serif, system-ui,
+    sans-serif;
+}
+
+:lang(zh) {
+  font-family:
+    "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB",
+    ui-sans-serif, system-ui, sans-serif;
+}
+
+/* CJK has no word spaces, so it needs help breaking inside long lines. */
+:lang(zh) p,
+:lang(zh) .chapter-teaser {
+  line-break: strict;
+  overflow-wrap: anywhere;
 }
 
 [dir="rtl"] .hero-text,
