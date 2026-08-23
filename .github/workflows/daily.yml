@@ -1,0 +1,93 @@
+name: MOLIDO Daily
+
+on:
+  schedule:
+    # 06:00 UTC every day. GitHub's scheduler can run late under load, which
+    # is fine - nothing here is time-critical to the minute.
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Date to render (YYYY-MM-DD). Defaults to today."
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+
+    # Declared at job level so the posting step's `if` can test them; a step's
+    # own `env:` is not visible to its own condition.
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        working-directory: website
+        run: npm install
+
+      - name: Install renderer
+        working-directory: website
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Resolve date
+        id: d
+        run: |
+          DATE="${{ github.event.inputs.date }}"
+          if [ -z "$DATE" ]; then DATE=$(date -u +%F); fi
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          echo "Rendering for $DATE"
+
+      - name: Write today's post text
+        working-directory: website
+        run: npx tsx scripts/make-post.mjs "${{ steps.d.outputs.date }}"
+
+      - name: Render Shorts
+        working-directory: website
+        run: |
+          npx tsx scripts/make-short.mjs "${{ steps.d.outputs.date }}" fa
+          npx tsx scripts/make-short.mjs "${{ steps.d.outputs.date }}" en
+
+      - name: Upload videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: molido-shorts-${{ steps.d.outputs.date }}
+          path: out/*.mp4
+          retention-days: 30
+
+      # Posting is opt-in. Without the secrets this step is skipped and the
+      # videos are still waiting in the artifact above, so the pipeline never
+      # depends on credentials existing.
+      - name: Post to Telegram
+        if: ${{ env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != '' }}
+        working-directory: website
+        run: npx tsx scripts/post-telegram.mjs "${{ steps.d.outputs.date }}"
+
+      - name: Commit today's text
+        run: |
+          git config user.name "molido-bot"
+          git config user.email "noreply@github.com"
+          if git diff --quiet -- docs/TODAY.md; then
+            echo "No change to docs/TODAY.md"
+            exit 0
+          fi
+          git add docs/TODAY.md
+          git commit -m "chore: today's post text for ${{ steps.d.outputs.date }}"
+          git push
