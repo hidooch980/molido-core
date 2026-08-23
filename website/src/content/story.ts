@@ -101,17 +101,37 @@ export const chapters: Chapter[] = [
   },
   {
     id: 4,
-    status: "incoming",
+    status: "transmitted",
     stage: { en: "Global Discovery", fa: "کشف جهانی" },
     title: { en: "Others Are Listening", fa: "دیگران هم می‌شنوند" },
     teaser: {
       en: "The signal did not reach one person. It reached everyone who was willing to look.",
       fa: "سیگنال به یک نفر نرسید. به هر کسی رسید که حاضر بود نگاه کند.",
     },
+    body: {
+      en: [
+        "The assumption, quietly, had been that this was one person's problem. It was not.",
+        "A student in Lagos had the same seventeen-station timestamp. A retired engineer in Chile had the checksum gap written on paper, worked out by hand, three weeks before anyone posted about it. A teenager in Jakarta had noticed the chart discrepancy first and been told, reasonably, that old maps are often wrong.",
+        "None of them found each other because they were looking for each other. They found each other because they were all asking the same badly-formed question in public, and the question is specific enough that it does not collide with anything else.",
+        "This is the part that should be said carefully. Nothing about a shared observation makes it correct. Thousands of people agreeing on a pattern is how real discoveries start and also how false ones survive; the difference is whether the pattern keeps holding when someone tries to break it.",
+        "So far it has held. Not because it is impressive — because every attempt to explain the gap as ordinary damage has had to explain why the damage is so well-behaved.",
+        "The fragment was never addressed to a person. Thirteen values, one absence, and no name attached to any of it.",
+        "It was addressed to whoever bothered.",
+      ],
+      fa: [
+        "فرضِ خاموش این بود که این مسئله‌ی یک نفر است. نبود.",
+        "دانشجویی در لاگوس همان مُهر زمانیِ هفده ایستگاه را داشت. مهندسی بازنشسته در شیلی شکافِ جمع کنترلی را روی کاغذ و با دست حساب کرده بود، سه هفته پیش از آنکه کسی چیزی منتشر کند. نوجوانی در جاکارتا نخستین کسی بود که ناهماهنگی نقشه‌ها را دید و به او — بجا — گفته شد که نقشه‌های قدیمی اغلب اشتباه‌اند.",
+        "هیچ‌کدام یکدیگر را پیدا نکردند چون دنبال هم می‌گشتند. یکدیگر را پیدا کردند چون همه در ملأ عام یک پرسشِ بدشکلِ واحد را می‌پرسیدند، و آن پرسش آن‌قدر مشخص هست که با چیز دیگری اشتباه گرفته نشود.",
+        "این همان بخشی است که باید با احتیاط گفته شود. اشتراکی‌بودن یک مشاهده، آن را درست نمی‌کند. توافق هزاران نفر بر سر یک الگو، هم شیوه‌ی آغاز کشف‌های واقعی است و هم شیوه‌ی بقای کشف‌های نادرست؛ تفاوت در این است که آیا الگو وقتی کسی می‌کوشد بشکندش، همچنان پابرجا می‌ماند یا نه.",
+        "تا اینجا پابرجا مانده است. نه به این دلیل که تحسین‌برانگیز است — بلکه چون هر تلاشی برای توضیح آن شکاف به‌عنوان آسیبی عادی، ناچار شده توضیح دهد چرا این آسیب این‌قدر مؤدب رفتار می‌کند.",
+        "قطعه هرگز خطاب به یک شخص نبود. سیزده مقدار، یک غیبت، و هیچ نامی به هیچ‌کدامشان پیوست نشده.",
+        "خطاب به هر کسی بود که به خودش زحمت داد.",
+      ],
+    },
   },
   {
     id: 5,
-    status: "sealed",
+    status: "incoming",
     stage: { en: "MOLIDO Awakening", fa: "بیداری مولیدو" },
     title: { en: "The Network Wakes", fa: "شبکه بیدار می‌شود" },
     teaser: {

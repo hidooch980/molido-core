@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Story from "./components/Story";
+import SignalStatus from "./components/SignalStatus";
 import LanguageToggle from "./components/LanguageToggle";
 import { LocaleContext } from "./i18n/context";
 import { strings } from "./i18n/strings";
@@ -42,14 +43,7 @@ function App() {
         </header>
 
         <main>
-          <section className="section" id="signal">
-            <h2>{t.signalHeading}</h2>
-            <div className="status">
-              <span className="pulse" aria-hidden="true" />
-              <span className="status-label">{t.signalStatus}</span>
-            </div>
-            <p className="muted">{t.signalNote}</p>
-          </section>
+          <SignalStatus />
 
           <Story />
 

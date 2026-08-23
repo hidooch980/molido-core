@@ -9,6 +9,7 @@ export interface Strings {
   signalHeading: string;
   signalStatus: string;
   signalNote: string;
+  dailySignal: string;
   storyHeading: string;
   storyIntro: string;
   storyFootnote: string;
@@ -35,6 +36,7 @@ export const strings: Localized<Strings> = {
     signalHeading: "Signal Status",
     signalStatus: "SIGNAL DETECTED",
     signalNote: "Transmission is active. Phase 01 — foundation online.",
+    dailySignal: "DAILY SIGNAL",
     storyHeading: "The Story",
     storyIntro:
       "MOLIDO is a global, AI-powered digital ecosystem built around interactive storytelling, games, community and creativity. THE LAST SIGNAL is its story universe — a single transmission, broken into fragments, uncovered by the people who choose to follow it.",
@@ -62,6 +64,7 @@ export const strings: Localized<Strings> = {
     signalHeading: "وضعیت سیگنال",
     signalStatus: "سیگنال شناسایی شد",
     signalNote: "ارسال فعال است. فاز ۰۱ — پایه‌ها آنلاین.",
+    dailySignal: "سیگنال روزانه",
     storyHeading: "داستان",
     storyIntro:
       "مولیدو یک زیست‌بوم دیجیتال جهانی مبتنی بر هوش مصنوعی است که حول داستان‌گویی تعاملی، بازی، اجتماع و خلاقیت ساخته می‌شود. «آخرین سیگنال» جهانِ داستانی آن است — یک ارسال، شکسته به قطعه‌ها، که کسانی آشکارش می‌کنند که انتخاب می‌کنند دنبالش بروند.",
