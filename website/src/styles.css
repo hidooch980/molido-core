@@ -170,3 +170,85 @@ a {
   letter-spacing: 0.18em;
   font-size: 0.85rem;
 }
+
+/* --- THE LAST SIGNAL: chapter list --- */
+
+.chapters {
+  list-style: none;
+  margin: 2rem 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chapter {
+  padding: 1.25rem 1.25rem 1rem;
+  border: 1px solid rgba(160, 185, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(126, 162, 255, 0.03);
+}
+
+.chapter-transmitted {
+  border-color: rgba(126, 162, 255, 0.4);
+  background: rgba(126, 162, 255, 0.07);
+}
+
+.chapter-sealed {
+  opacity: 0.62;
+}
+
+.chapter-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.55rem;
+}
+
+.chapter-no {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: #7ea2ff;
+}
+
+.chapter-stage {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #97a3c2;
+}
+
+.chapter-status {
+  margin-left: auto;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+.status-transmitted { color: #4ade80; }
+.status-incoming    { color: #facc15; }
+.status-sealed      { color: #8892ad; }
+
+.chapter-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.22rem;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+}
+
+.chapter-teaser {
+  margin: 0;
+  color: #b9c4e0;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.chapter-body {
+  margin: 0.9rem 0 0;
+  line-height: 1.75;
+}

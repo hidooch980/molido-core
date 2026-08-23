@@ -1,3 +1,5 @@
+import Story from "./components/Story";
+
 const TELEGRAM_URL = "https://t.me/Molidoo";
 const YOUTUBE_URL = "https://youtube.com/@molido-v7z";
 
@@ -32,15 +34,7 @@ function App() {
           </p>
         </section>
 
-        <section className="section" id="story">
-          <h2>The Story</h2>
-          <p>
-            MOLIDO is a global, AI-powered digital ecosystem built around
-            interactive storytelling, games, community and creativity. The Last
-            Signal is where the story starts — a single transmission, and
-            everyone who chooses to follow it.
-          </p>
-        </section>
+        <Story />
 
         <section className="section" id="community">
           <h2>Community</h2>
