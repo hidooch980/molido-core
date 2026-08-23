@@ -87,6 +87,29 @@ for (const day of days) {
     }
   }
 
+  if (puzzle.kind === "common") {
+    // Exactly one value may appear in every block. A second one makes the
+    // puzzle ambiguous; none makes it unsolvable.
+    const shared: number[] = [];
+    for (let v = 0; v < MODULUS; v++) {
+      if (puzzle.blocks.every((block) => block.includes(v))) shared.push(v);
+    }
+    check(
+      shared.length === 1,
+      `${day}: ${shared.length} values appear in every block, expected 1`,
+    );
+    check(
+      shared[0] === puzzle.answer,
+      `${day}: the shared value is not the stated answer`,
+    );
+    for (const block of puzzle.blocks) {
+      check(
+        new Set(block).size === block.length,
+        `${day}: a block repeats a value`,
+      );
+    }
+  }
+
   if (puzzle.kind === "period") {
     // No shorter period may also fit, or the answer is ambiguous.
     for (let p = 1; p < puzzle.answer; p++) {

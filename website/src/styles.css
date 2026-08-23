@@ -728,3 +728,19 @@ body::after {
   color: #97a3c2;
   font-variant-numeric: tabular-nums;
 }
+
+/* --- Four-station block --- */
+
+.frag-station {
+  margin-bottom: 0.4rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: #7ea2ff;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+[dir="rtl"] .frag-station {
+  letter-spacing: normal;
+  text-align: start;
+}

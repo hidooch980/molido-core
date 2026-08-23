@@ -16,10 +16,15 @@
 export const MODULUS = 256;
 export const SECTION_LENGTH = 14;
 
-export type PuzzleKind = "checksum" | "parity" | "period";
+export type PuzzleKind = "checksum" | "parity" | "period" | "common";
 
 /** Order of rotation. Week 0 gets the first, and so on. */
-export const KINDS: readonly PuzzleKind[] = ["checksum", "parity", "period"];
+export const KINDS: readonly PuzzleKind[] = [
+  "checksum",
+  "parity",
+  "period",
+  "common",
+];
 
 export interface Section {
   values: number[];
@@ -57,7 +62,18 @@ export interface PeriodPuzzle {
   max: number;
 }
 
-export type Puzzle = ChecksumPuzzle | ParityPuzzle | PeriodPuzzle;
+export interface CommonPuzzle {
+  kind: "common";
+  /** One block per station. Exactly one value appears in all of them. */
+  blocks: number[][];
+  answer: number;
+}
+
+export type Puzzle =
+  | ChecksumPuzzle
+  | ParityPuzzle
+  | PeriodPuzzle
+  | CommonPuzzle;
 
 /** mulberry32 — deterministic, so everyone sees the same puzzle. */
 function rng(seed: number): () => number {
@@ -169,6 +185,42 @@ function makePeriod(next: () => number): PeriodPuzzle {
   return { kind: "period", values, answer: period, min: MIN_PERIOD, max: MAX_PERIOD };
 }
 
+const STATIONS = 4;
+const BLOCK_SIZE = 9;
+
+/**
+ * Four stations, four blocks, exactly one value common to all of them.
+ *
+ * This is chapter 04 as a mechanic: separate people holding separate
+ * pieces, and the only thing worth finding is what they share.
+ */
+function makeCommon(next: () => number): CommonPuzzle {
+  const shared = Math.floor(next() * MODULUS);
+
+  // Build each block from values no other block will contain, then plant the
+  // shared value. Partitioning the range by station means no second value
+  // can accidentally appear everywhere.
+  const blocks: number[][] = [];
+  for (let station = 0; station < STATIONS; station++) {
+    const values = new Set<number>();
+    while (values.size < BLOCK_SIZE - 1) {
+      const v = Math.floor(next() * MODULUS);
+      if (v === shared) continue;
+      if (v % STATIONS !== station) continue;
+      values.add(v);
+    }
+    const block = [...values, shared];
+    // Shuffle so the shared value is not always last.
+    for (let i = block.length - 1; i > 0; i--) {
+      const j = Math.floor(next() * (i + 1));
+      [block[i], block[j]] = [block[j], block[i]];
+    }
+    blocks.push(block);
+  }
+
+  return { kind: "common", blocks, answer: shared };
+}
+
 /** The puzzle for a given day, as YYYY-MM-DD. */
 export function puzzleFor(date: string): Puzzle {
   const next = rng(seedFrom(date));
@@ -179,6 +231,8 @@ export function puzzleFor(date: string): Puzzle {
       return makeParity(next);
     case "period":
       return makePeriod(next);
+    case "common":
+      return makeCommon(next);
   }
 }
 
@@ -189,6 +243,7 @@ export function isCorrect(puzzle: Puzzle, guess: number): boolean {
       return (sumMod(puzzle.values) + guess) % MODULUS === puzzle.checksum;
     case "parity":
     case "period":
+    case "common":
       return guess === puzzle.answer;
   }
 }
@@ -202,5 +257,7 @@ export function answerRange(puzzle: Puzzle): { min: number; max: number } {
       return { min: 1, max: SIZE * SIZE };
     case "period":
       return { min: puzzle.min, max: puzzle.max };
+    case "common":
+      return { min: 0, max: MODULUS - 1 };
   }
 }

@@ -6,6 +6,7 @@ import {
   type ChecksumPuzzle,
   type ParityPuzzle,
   type PeriodPuzzle,
+  type CommonPuzzle,
   type Puzzle,
 } from "../content/puzzles";
 import { todayISO } from "../content/signals";
@@ -114,6 +115,19 @@ function PeriodView({ puzzle }: { puzzle: PeriodPuzzle }) {
   );
 }
 
+function CommonView({ puzzle }: { puzzle: CommonPuzzle }) {
+  return (
+    <div className="fragment">
+      {puzzle.blocks.map((block, i) => (
+        <div className="frag-section" key={i}>
+          <div className="frag-station">{String(i + 1).padStart(2, "0")}</div>
+          <Cells values={block} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function intro(puzzle: Puzzle, t: Strings): string {
   switch (puzzle.kind) {
     case "checksum":
@@ -122,6 +136,8 @@ function intro(puzzle: Puzzle, t: Strings): string {
       return t.parityIntro;
     case "period":
       return t.periodIntro;
+    case "common":
+      return t.commonIntro;
   }
 }
 
@@ -133,6 +149,8 @@ function prompt(puzzle: Puzzle, t: Strings): string {
       return t.parityPrompt;
     case "period":
       return t.periodPrompt;
+    case "common":
+      return t.commonPrompt;
   }
 }
 
@@ -197,8 +215,10 @@ function Fragment() {
         <ChecksumView puzzle={puzzle} t={t} />
       ) : puzzle.kind === "parity" ? (
         <ParityView puzzle={puzzle} t={t} />
-      ) : (
+      ) : puzzle.kind === "period" ? (
         <PeriodView puzzle={puzzle} />
+      ) : (
+        <CommonView puzzle={puzzle} />
       )}
 
       {!solved ? (

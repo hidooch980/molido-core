@@ -40,6 +40,8 @@ export interface Strings {
   parityColumn: string;
   periodIntro: string;
   periodPrompt: string;
+  commonIntro: string;
+  commonPrompt: string;
   shareResult: string;
   shareCopied: string;
   attemptsLabel: string;
@@ -90,6 +92,8 @@ export const strings: Localized<Strings> = {
     parityColumn: "column",
     periodIntro: "The carrier repeats. A fixed run of values is transmitted over and over with nothing between the repeats. Work out how long that run is.",
     periodPrompt: "Repeat length",
+    commonIntro: "Four stations each recorded a block. Exactly one value is present in all four. Everything else belongs to one station only.",
+    commonPrompt: "Shared value (0–255)",
     shareResult: "Share result",
     shareCopied: "Copied",
     attemptsLabel: "Attempts",
@@ -138,6 +142,8 @@ export const strings: Localized<Strings> = {
     parityColumn: "ستون",
     periodIntro: "حامل تکرار می‌شود. یک رشته‌ی ثابت از مقادیر بارها و بارها فرستاده می‌شود، بدون هیچ چیزی میان تکرارها. طول آن رشته را به دست بیاور.",
     periodPrompt: "طول تکرار",
+    commonIntro: "چهار ایستگاه هر کدام یک بلوک ثبت کرده‌اند. دقیقاً یک مقدار در هر چهار بلوک هست. باقی همه‌چیز فقط به یک ایستگاه تعلق دارد.",
+    commonPrompt: "مقدار مشترک (۰ تا ۲۵۵)",
     shareResult: "اشتراک نتیجه",
     shareCopied: "کپی شد",
     attemptsLabel: "تلاش",
@@ -186,6 +192,8 @@ export const strings: Localized<Strings> = {
     parityColumn: "عمود",
     periodIntro: "الحامل يتكرر. تُرسل سلسلة ثابتة من القيم مرارًا وتكرارًا بلا شيء بين التكرارات. استنتج طول تلك السلسلة.",
     periodPrompt: "طول التكرار",
+    commonIntro: "سجّلت أربع محطات كل واحدة كتلة. قيمة واحدة بالضبط موجودة في الأربع جميعًا. كل ما عداها يخص محطة واحدة فقط.",
+    commonPrompt: "القيمة المشتركة (٠–٢٥٥)",
     shareResult: "شارك النتيجة",
     shareCopied: "تم النسخ",
     attemptsLabel: "المحاولات",
@@ -234,6 +242,8 @@ export const strings: Localized<Strings> = {
     parityColumn: "کالم",
     periodIntro: "کیریئر دہراتا ہے۔ اقدار کی ایک مقررہ لڑی بار بار بھیجی جاتی ہے، دہرائیوں کے درمیان کچھ نہیں۔ اس لڑی کی لمبائی معلوم کریں۔",
     periodPrompt: "دہرائی کی لمبائی",
+    commonIntro: "چار اسٹیشنوں نے ایک ایک بلاک ریکارڈ کیا۔ بالکل ایک قدر چاروں میں موجود ہے۔ باقی سب کچھ صرف ایک اسٹیشن کا ہے۔",
+    commonPrompt: "مشترکہ قدر (۰ تا ۲۵۵)",
     shareResult: "نتیجہ شیئر کریں",
     shareCopied: "کاپی ہو گیا",
     attemptsLabel: "کوششیں",
@@ -282,6 +292,8 @@ export const strings: Localized<Strings> = {
     parityColumn: "स्तंभ",
     periodIntro: "वाहक दोहराता है। मानों की एक निश्चित लड़ी बार-बार भेजी जाती है, दोहरावों के बीच कुछ नहीं। उस लड़ी की लंबाई निकालें।",
     periodPrompt: "दोहराव की लंबाई",
+    commonIntro: "चार स्टेशनों ने एक-एक खंड दर्ज किया। ठीक एक मान चारों में मौजूद है। बाकी सब केवल एक स्टेशन का है।",
+    commonPrompt: "साझा मान (0–255)",
     shareResult: "परिणाम साझा करें",
     shareCopied: "कॉपी हो गया",
     attemptsLabel: "प्रयास",
@@ -330,6 +342,8 @@ export const strings: Localized<Strings> = {
     parityColumn: "sütun",
     periodIntro: "Taşıyıcı tekrar ediyor. Sabit bir değer dizisi, aralarında hiçbir şey olmadan tekrar tekrar gönderiliyor. O dizinin uzunluğunu bulun.",
     periodPrompt: "Tekrar uzunluğu",
+    commonIntro: "Dört istasyonun her biri bir blok kaydetti. Tam olarak bir değer dördünde birden var. Geri kalan her şey yalnızca tek bir istasyona ait.",
+    commonPrompt: "Ortak değer (0–255)",
     shareResult: "Sonucu paylaş",
     shareCopied: "Kopyalandı",
     attemptsLabel: "Deneme",
@@ -378,6 +392,8 @@ export const strings: Localized<Strings> = {
     parityColumn: "sütun",
     periodIntro: "Daşıyıcı təkrarlanır. Sabit bir dəyər ardıcıllığı, təkrarlar arasında heç nə olmadan dönə-dönə göndərilir. O ardıcıllığın uzunluğunu tapın.",
     periodPrompt: "Təkrar uzunluğu",
+    commonIntro: "Dörd stansiyanın hər biri bir blok qeydə aldı. Dəqiq bir dəyər hər dördündə var. Qalan hər şey yalnız bir stansiyaya aiddir.",
+    commonPrompt: "Ortaq dəyər (0–255)",
     shareResult: "Nəticəni paylaş",
     shareCopied: "Kopyalandı",
     attemptsLabel: "Cəhd",
@@ -426,6 +442,8 @@ export const strings: Localized<Strings> = {
     parityColumn: "列",
     periodIntro: "载波在重复。一段固定长度的值被一遍遍发送，重复之间没有任何东西。算出这段有多长。",
     periodPrompt: "重复长度",
+    commonIntro: "四个台站各记录了一个区块。恰好有一个值在四个里都出现。其余的每个值都只属于一个台站。",
+    commonPrompt: "共有的值（0–255）",
     shareResult: "分享结果",
     shareCopied: "已复制",
     attemptsLabel: "尝试次数",
