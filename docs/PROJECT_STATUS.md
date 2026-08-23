@@ -29,7 +29,7 @@ Foundation started.
 
 - GitHub: Active
 - Telegram: Official channel identified
-- YouTube: Official channel identified
+- YouTube: Publishing started — first daily-puzzle Shorts posted 23 August 2026 (English and Persian)
 - Website: Live at https://hidooch980.github.io/molido-core/ (GitHub Pages, free tier). Custom-domain steps: docs/DEPLOYMENT.md
 - Game: Playable on the website. Four puzzle kinds rotate weekly, with a new instance daily. No accounts, no backend. XP, collection and quests remain unstarted (Phase 3).
 - Blockchain: Future phase
