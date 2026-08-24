@@ -1,27 +1,27 @@
-# Today — 2026-08-23
+# Today — 2026-08-24
 
 Generated automatically. Do not edit; it is overwritten each day.
 
-Puzzle: **common** · Signal dated: **2026-08-23**
-Video: `out/short-2026-08-23-en.mp4` and `out/short-2026-08-23-fa.mp4`
+Puzzle: **period** · Signal dated: **2026-08-24**
+Video: `out/short-2026-08-24-en.mp4` and `out/short-2026-08-24-fa.mp4`
 (attached to the run in the Actions tab)
 
-Signals written ahead: **14 day(s)**.
+Signals written ahead: **13 day(s)**.
 
 ### فارسی
 
 **YouTube title**
 
 ```
-چهار ایستگاه. یک مقدار در هر چهار. پیدایش می‌کنی؟
+حامل تکرار می‌شود. طول تکرار چقدر است؟
 ```
 
 **Description / Telegram post**
 
 ```
-چهارمین قطعه حل شد. سه قاره در فاصله‌ی نُه ساعت از هم، همان شکافِ جمع کنترلی را گزارش کردند.
+خوانش امروز صبح عوض شد. دیگر با ارسال مثل متن رفتار نمی‌شود.
 
-چهار ایستگاه. یک مقدار در هر چهار. پیدایش می‌کنی؟
+حامل تکرار می‌شود. طول تکرار چقدر است؟
 
 https://hidooch980.github.io/molido-core/
 
@@ -33,15 +33,15 @@ https://hidooch980.github.io/molido-core/
 **YouTube title**
 
 ```
-Four stations. One value in all four. Can you find it?
+The carrier repeats. How long is the repeat?
 ```
 
 **Description / Telegram post**
 
 ```
-Fourth fragment resolved. Three continents reported the same checksum gap within nine hours of each other.
+Reading changed this morning. The transmission is no longer being treated as text.
 
-Four stations. One value in all four. Can you find it?
+The carrier repeats. How long is the repeat?
 
 https://hidooch980.github.io/molido-core/
 
