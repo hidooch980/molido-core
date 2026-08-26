@@ -1,12 +1,12 @@
-# Today — 2026-08-25
+# Today — 2026-08-26
 
 Generated automatically. Do not edit; it is overwritten each day.
 
-Puzzle: **period** · Signal dated: **2026-08-25**
-Video: `out/short-2026-08-25-en.mp4` and `out/short-2026-08-25-fa.mp4`
+Puzzle: **period** · Signal dated: **2026-08-26**
+Video: `out/short-2026-08-26-en.mp4` and `out/short-2026-08-26-fa.mp4`
 (attached to the run in the Actions tab)
 
-Signals written ahead: **12 day(s)**.
+Signals written ahead: **11 day(s)**.
 
 ### فارسی
 
@@ -19,7 +19,7 @@ Signals written ahead: **12 day(s)**.
 **Description / Telegram post**
 
 ```
-پنجمین قطعه سرِ هم شد. آنچه از آن به دست می‌آید یک رویّه است، نه یک پیام.
+حامل در حال تکرار است. همان رشته‌ی مقادیر، بارها و بارها، بدون هیچ چیز در میانه.
 
 حامل تکرار می‌شود. طول تکرار چقدر است؟
 
@@ -39,7 +39,7 @@ The carrier repeats. How long is the repeat?
 **Description / Telegram post**
 
 ```
-Fifth fragment assembled. What it resolves into is a procedure, not a message.
+The carrier is repeating. Same run of values, over and over, with nothing in between.
 
 The carrier repeats. How long is the repeat?
 
