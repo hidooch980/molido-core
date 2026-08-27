@@ -1,12 +1,12 @@
-# Today — 2026-08-26
+# Today — 2026-08-27
 
 Generated automatically. Do not edit; it is overwritten each day.
 
-Puzzle: **period** · Signal dated: **2026-08-26**
-Video: `out/short-2026-08-26-en.mp4` and `out/short-2026-08-26-fa.mp4`
+Puzzle: **period** · Signal dated: **2026-08-27**
+Video: `out/short-2026-08-27-en.mp4` and `out/short-2026-08-27-fa.mp4`
 (attached to the run in the Actions tab)
 
-Signals written ahead: **11 day(s)**.
+Signals written ahead: **10 day(s)**.
 
 ### فارسی
 
@@ -19,7 +19,7 @@ Signals written ahead: **11 day(s)**.
 **Description / Telegram post**
 
 ```
-حامل در حال تکرار است. همان رشته‌ی مقادیر، بارها و بارها، بدون هیچ چیز در میانه.
+امروز شمردن با دست از شمردن با ماشین جلو زد. الگو آن‌قدر کوتاه هست که دیده شود.
 
 حامل تکرار می‌شود. طول تکرار چقدر است؟
 
@@ -39,7 +39,7 @@ The carrier repeats. How long is the repeat?
 **Description / Telegram post**
 
 ```
-The carrier is repeating. Same run of values, over and over, with nothing in between.
+Counting by hand beat counting by machine today. The pattern is short enough to see.
 
 The carrier repeats. How long is the repeat?
 
