@@ -1,12 +1,12 @@
-# Today — 2026-08-28
+# Today — 2026-08-29
 
 Generated automatically. Do not edit; it is overwritten each day.
 
-Puzzle: **period** · Signal dated: **2026-08-28**
-Video: `out/short-2026-08-28-en.mp4` and `out/short-2026-08-28-fa.mp4`
+Puzzle: **period** · Signal dated: **2026-08-29**
+Video: `out/short-2026-08-29-en.mp4` and `out/short-2026-08-29-fa.mp4`
 (attached to the run in the Actions tab)
 
-Signals written ahead: **9 day(s)**.
+Signals written ahead: **8 day(s)**.
 
 ### فارسی
 
@@ -19,7 +19,7 @@ Signals written ahead: **9 day(s)**.
 **Description / Telegram post**
 
 ```
-میان تکرارها هیچ نیست. نه شکافی، نه نشانی، نه مکثی. فقط دوباره آغاز می‌شود.
+تکرار کوتاه‌تری پیشنهاد شد و دوام نیاورد. خوانشِ بلندتر باقی می‌ماند.
 
 حامل تکرار می‌شود. طول تکرار چقدر است؟
 
@@ -39,7 +39,7 @@ The carrier repeats. How long is the repeat?
 **Description / Telegram post**
 
 ```
-Nothing sits between the repeats. No gap, no marker, no pause. It simply begins again.
+A shorter repeat was proposed and did not hold. The longer reading survives.
 
 The carrier repeats. How long is the repeat?
 
