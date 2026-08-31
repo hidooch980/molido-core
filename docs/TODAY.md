@@ -1,27 +1,27 @@
-# Today — 2026-08-30
+# Today — 2026-08-31
 
 Generated automatically. Do not edit; it is overwritten each day.
 
-Puzzle: **period** · Signal dated: **2026-08-30**
-Video: `out/short-2026-08-30-en.mp4` and `out/short-2026-08-30-fa.mp4`
+Puzzle: **checksum** · Signal dated: **2026-08-31**
+Video: `out/short-2026-08-31-en.mp4` and `out/short-2026-08-31-fa.mp4`
 (attached to the run in the Actions tab)
 
-Signals written ahead: **7 day(s)**.
+Signals written ahead: **6 day(s)**.
 
 ### فارسی
 
 **YouTube title**
 
 ```
-حامل تکرار می‌شود. طول تکرار چقدر است؟
+یک مقدار گم شده. جمع کنترلی می‌داند کدام.
 ```
 
 **Description / Telegram post**
 
 ```
-طول چرخه در همه‌ی ایستگاه‌هایی که گزارش دادند یکی درآمد. حامل در حال رانش نیست.
+تکرار شش روز دوام آورد و بعد حامل شکلش را عوض کرد. ساختار تازه‌ای در راه است.
 
-حامل تکرار می‌شود. طول تکرار چقدر است؟
+یک مقدار گم شده. جمع کنترلی می‌داند کدام.
 
 https://hidooch980.github.io/molido-core/
 
@@ -33,15 +33,15 @@ https://hidooch980.github.io/molido-core/
 **YouTube title**
 
 ```
-The carrier repeats. How long is the repeat?
+One value is missing. The checksum knows which.
 ```
 
 **Description / Telegram post**
 
 ```
-Cycle length agreed on across every station that reported. The carrier is not drifting.
+The repeat held for six days and then the carrier changed shape. A new structure is arriving.
 
-The carrier repeats. How long is the repeat?
+One value is missing. The checksum knows which.
 
 https://hidooch980.github.io/molido-core/
 
