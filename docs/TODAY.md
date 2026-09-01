@@ -1,12 +1,12 @@
-# Today — 2026-08-31
+# Today — 2026-09-01
 
 Generated automatically. Do not edit; it is overwritten each day.
 
-Puzzle: **checksum** · Signal dated: **2026-08-31**
-Video: `out/short-2026-08-31-en.mp4` and `out/short-2026-08-31-fa.mp4`
+Puzzle: **checksum** · Signal dated: **2026-09-01**
+Video: `out/short-2026-09-01-en.mp4` and `out/short-2026-09-01-fa.mp4`
 (attached to the run in the Actions tab)
 
-Signals written ahead: **6 day(s)**.
+Signals written ahead: **5 day(s)**.
 
 ### فارسی
 
@@ -19,7 +19,7 @@ Signals written ahead: **6 day(s)**.
 **Description / Telegram post**
 
 ```
-تکرار شش روز دوام آورد و بعد حامل شکلش را عوض کرد. ساختار تازه‌ای در راه است.
+بازگشت به حساب. اگر بخشی یک مقدار کم داشته باشد، جمع از قبل می‌داند کدام است.
 
 یک مقدار گم شده. جمع کنترلی می‌داند کدام.
 
@@ -39,7 +39,7 @@ One value is missing. The checksum knows which.
 **Description / Telegram post**
 
 ```
-The repeat held for six days and then the carrier changed shape. A new structure is arriving.
+Back to arithmetic. If a section is short one value, the sum already knows which one.
 
 One value is missing. The checksum knows which.
 
