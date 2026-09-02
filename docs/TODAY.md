@@ -1,12 +1,12 @@
-# Today — 2026-09-01
+# Today — 2026-09-02
 
 Generated automatically. Do not edit; it is overwritten each day.
 
-Puzzle: **checksum** · Signal dated: **2026-09-01**
-Video: `out/short-2026-09-01-en.mp4` and `out/short-2026-09-01-fa.mp4`
+Puzzle: **checksum** · Signal dated: **2026-09-02**
+Video: `out/short-2026-09-02-en.mp4` and `out/short-2026-09-02-fa.mp4`
 (attached to the run in the Actions tab)
 
-Signals written ahead: **5 day(s)**.
+Signals written ahead: **4 day(s)**.
 
 ### فارسی
 
@@ -19,7 +19,7 @@ Signals written ahead: **5 day(s)**.
 **Description / Telegram post**
 
 ```
-بازگشت به حساب. اگر بخشی یک مقدار کم داشته باشد، جمع از قبل می‌داند کدام است.
+جمع‌های کنترلی در سراسر بایگانی بسته می‌شوند. سیزده بخش از روی سوابق ناقص بازسازی شد.
 
 یک مقدار گم شده. جمع کنترلی می‌داند کدام.
 
@@ -39,7 +39,7 @@ One value is missing. The checksum knows which.
 **Description / Telegram post**
 
 ```
-Back to arithmetic. If a section is short one value, the sum already knows which one.
+Checksums are closing across the archive. Thirteen sections rebuilt from partial records.
 
 One value is missing. The checksum knows which.
 
