@@ -1,12 +1,15 @@
-# Today — 2026-09-02
+# Today — 2026-09-03
 
 Generated automatically. Do not edit; it is overwritten each day.
 
-Puzzle: **checksum** · Signal dated: **2026-09-02**
-Video: `out/short-2026-09-02-en.mp4` and `out/short-2026-09-02-fa.mp4`
+Puzzle: **checksum** · Signal dated: **2026-09-03**
+Video: `out/short-2026-09-03-en.mp4` and `out/short-2026-09-03-fa.mp4`
 (attached to the run in the Actions tab)
 
-Signals written ahead: **4 day(s)**.
+> **Signals run out in 3 day(s).**
+> After that the site keeps showing the last one written. Add entries to
+> `website/src/content/signals.ts` — see docs/DAILY.md.
+
 
 ### فارسی
 
@@ -19,7 +22,7 @@ Signals written ahead: **4 day(s)**.
 **Description / Telegram post**
 
 ```
-جمع‌های کنترلی در سراسر بایگانی بسته می‌شوند. سیزده بخش از روی سوابق ناقص بازسازی شد.
+جمع‌ها دوباره با دست بررسی می‌شوند. ماشین‌ها موافق‌اند، که با درست بودن یکی نیست.
 
 یک مقدار گم شده. جمع کنترلی می‌داند کدام.
 
@@ -39,7 +42,7 @@ One value is missing. The checksum knows which.
 **Description / Telegram post**
 
 ```
-Checksums are closing across the archive. Thirteen sections rebuilt from partial records.
+The sums are being checked by hand again. Machines agree, which is not the same as being right.
 
 One value is missing. The checksum knows which.
 
