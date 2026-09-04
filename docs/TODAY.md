@@ -1,12 +1,12 @@
-# Today — 2026-09-03
+# Today — 2026-09-04
 
 Generated automatically. Do not edit; it is overwritten each day.
 
-Puzzle: **checksum** · Signal dated: **2026-09-03**
-Video: `out/short-2026-09-03-en.mp4` and `out/short-2026-09-03-fa.mp4`
+Puzzle: **checksum** · Signal dated: **2026-09-04**
+Video: `out/short-2026-09-04-en.mp4` and `out/short-2026-09-04-fa.mp4`
 (attached to the run in the Actions tab)
 
-> **Signals run out in 3 day(s).**
+> **Signals run out in 2 day(s).**
 > After that the site keeps showing the last one written. Add entries to
 > `website/src/content/signals.ts` — see docs/DAILY.md.
 
@@ -22,7 +22,7 @@ Video: `out/short-2026-09-03-en.mp4` and `out/short-2026-09-03-fa.mp4`
 **Description / Telegram post**
 
 ```
-جمع‌ها دوباره با دست بررسی می‌شوند. ماشین‌ها موافق‌اند، که با درست بودن یکی نیست.
+دو خواننده از دو نیمه‌ی متفاوت بلوک به همان مقدار غایب رسیدند.
 
 یک مقدار گم شده. جمع کنترلی می‌داند کدام.
 
@@ -42,7 +42,7 @@ One value is missing. The checksum knows which.
 **Description / Telegram post**
 
 ```
-The sums are being checked by hand again. Machines agree, which is not the same as being right.
+Two readers reached the same missing value from different halves of the block.
 
 One value is missing. The checksum knows which.
 
