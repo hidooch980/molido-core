@@ -1,9 +1,9 @@
-# Today — 2026-09-06
+# Today — 2026-09-07
 
 Generated automatically. Do not edit; it is overwritten each day.
 
-Puzzle: **checksum** · Signal dated: **2026-09-06**
-Video: `out/short-2026-09-06-en.mp4` and `out/short-2026-09-06-fa.mp4`
+Puzzle: **parity** · Signal dated: **2026-09-06**
+Video: `out/short-2026-09-07-en.mp4` and `out/short-2026-09-07-fa.mp4`
 (attached to the run in the Actions tab)
 
 > **Signals run out in 0 day(s).**
@@ -16,7 +16,7 @@ Video: `out/short-2026-09-06-en.mp4` and `out/short-2026-09-06-fa.mp4`
 **YouTube title**
 
 ```
-یک مقدار گم شده. جمع کنترلی می‌داند کدام.
+یک خانه خراب شده. یک سطر و یک ستون ناسازگارند.
 ```
 
 **Description / Telegram post**
@@ -24,7 +24,7 @@ Video: `out/short-2026-09-06-en.mp4` and `out/short-2026-09-06-fa.mp4`
 ```
 هر بخشِ بازسازی‌شده حالا حل می‌شود. آن یکی که هرگز حل نشد، همچنان همانی است که اهمیت دارد.
 
-یک مقدار گم شده. جمع کنترلی می‌داند کدام.
+یک خانه خراب شده. یک سطر و یک ستون ناسازگارند.
 
 https://hidooch980.github.io/molido-core/
 
@@ -36,7 +36,7 @@ https://hidooch980.github.io/molido-core/
 **YouTube title**
 
 ```
-One value is missing. The checksum knows which.
+One cell was corrupted. One row and one column disagree.
 ```
 
 **Description / Telegram post**
@@ -44,7 +44,7 @@ One value is missing. The checksum knows which.
 ```
 Every reconstructed section now resolves. The one that never did is still the one that matters.
 
-One value is missing. The checksum knows which.
+One cell was corrupted. One row and one column disagree.
 
 https://hidooch980.github.io/molido-core/
 
