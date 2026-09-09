@@ -1,9 +1,9 @@
-# Today — 2026-09-08
+# Today — 2026-09-09
 
 Generated automatically. Do not edit; it is overwritten each day.
 
 Puzzle: **parity** · Signal dated: **2026-09-06**
-Video: `out/short-2026-09-08-en.mp4` and `out/short-2026-09-08-fa.mp4`
+Video: `out/short-2026-09-09-en.mp4` and `out/short-2026-09-09-fa.mp4`
 (attached to the run in the Actions tab)
 
 > **Signals run out in 0 day(s).**
